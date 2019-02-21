@@ -10,7 +10,7 @@ public class Invoice
     // instance variables - replace the example below with your own
     private int id;
     private int idItem;
-    private char data;
+    private String data;
     private int totalPrice;
 
     /**
@@ -33,25 +33,25 @@ public class Invoice
     public int getId()
     {
         // put your code here
-        return id;
+        return 0;
     }
     
-    public char getIdItem()
+    public String getIdItem()
     {
         // put your code here
-        return idItem;
+        return "";
     }
     
-    public char getDate()
+    public String getDate()
     {
         // put your code here
-        return date;
+        return "";
     }
     
     public int getTotalPrice()
     {
         // put your code here
-        return totalPrice;
+        return 0;
     }
     
     public void setId(int id)
@@ -66,7 +66,7 @@ public class Invoice
         
     }
     
-    public void setDate(char date)
+    public void setDate(String date)
     {
         // put your code here
         

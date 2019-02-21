@@ -9,19 +9,18 @@ public class Supplier
 {
     // instance variables - replace the example below with your own
     private int id;
-    private char name;
-    private char email;
-    private char phoneNumber;
-    private char city;
+    private String name;
+    private String email;
+    private String phoneNumber;
+    private String city;
 
     /**
      * Constructor for objects of class Supplier
      */
     public Supplier()
     {
-        // initialise instance variables
-        id = 0;
-        
+        // initialise instance variables 
+                
     }
 
     /**
@@ -33,58 +32,58 @@ public class Supplier
     public int getId()
     {
         // put your code here
-        return id;
+        return 0;
     }
     
-    public char getName()
+    public String getName()
     {
         // put your code here
-        return name;
+        return "";
     }
     
-    public char getEmail()
+    public String getEmail()
     {
         // put your code here
-        return email;
+        return "";
     }
     
-    public char getPhoneNumber()
+    public String getPhoneNumber()
     {
         // put your code here
-        return phoneNumber;
+        return "";
     }
     
-    public char getCity()
+    public String getCity()
     {
         // put your code here
-        return city;
+        return "";
     }
     
     public void setId(int id)
     {
         // put your code here
-        return 0;
+        
     }
     
-    public void setName(char name)
+    public void setName(String name)
     {
         // put your code here
         
     }
     
-    public void setEmail(char email)
+    public void setEmail(String email)
     {
         // put your code here
         
     }
     
-    public void setPhoneNumber(char phoneNumber)
+    public void setPhoneNumber(String phoneNumber)
     {
         // put your code here
         
     }
     
-    public void setCity(char city)
+    public void setCity(String city)
     {
         // put your code here
         

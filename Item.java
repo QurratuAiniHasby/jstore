@@ -9,10 +9,10 @@ public class Item
 {
     // instance variables - replace the example below with your own
     private int id;
-    private char name;
+    private String name;
     private int stock;
     private int price;
-    private char category;
+    private String category;
     
     
     /**
@@ -35,60 +35,60 @@ public class Item
     public int getId()
     {
         // put your code here
-        return id;
+        return 0;
     }
     
-    public char getName()
+    public String getName()
     {
         // put your code here
-        return name;
+        return "";
     }
     
     public int getStock()
     {
         // put your code here
-        return stock;
+        return 0;
     }
     
     public int getPrice()
     {
         // put your code here
-        return price;
+        return 0;
     }
     
-    public char getCategory()
+    public String getCategory()
     {
         // put your code here
-        return category;
+        return "";
     }
     
     public void setId(int id)
     {
         // put your code here
-        return ;
+        
     }
     
-    public void setName(char Name)
+    public void setName(String Name)
     {
         // put your code here
         
     }
     
-    public void setStock(int stock)
+    public void setStock(String stock)
     {
         // put your code here
-        return x + y;
+        
     }
     
     public void setPrice(int price)
     {
         // put your code here
-        return x + y;
+        
     }
     
-    public void setCategory(char category)
+    public void setCategory(String category)
     {
         // put your code here
-        return x + y;
+        
     }
 }
