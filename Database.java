@@ -8,7 +8,7 @@
 public class Database
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private String[] listItem;
 
     /**
      * Constructor for objects of class Database
@@ -16,7 +16,7 @@ public class Database
     public Database()
     {
         // initialise instance variables
-        x = 0;
+        
     }
 
     /**
@@ -25,9 +25,21 @@ public class Database
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public void addItem()
     {
         // put your code here
-        return x + y;
+        
+    }
+    
+    public void removeItem()
+    {
+        // put your code here
+        
+    }
+    
+    public void getItemDatabase()
+    {
+        // put your code here
+        
     }
 }
