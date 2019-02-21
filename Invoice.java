@@ -19,7 +19,9 @@ public class Invoice
     public Invoice()
     {
         // initialise instance variables
-        x = 0;
+        id = 0;
+        idItem = 0;
+        totalPrice = 0;
     }
 
     /**
@@ -28,9 +30,51 @@ public class Invoice
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public int getId()
     {
         // put your code here
-        return x + y;
+        return id;
+    }
+    
+    public char getIdItem()
+    {
+        // put your code here
+        return idItem;
+    }
+    
+    public char getDate()
+    {
+        // put your code here
+        return date;
+    }
+    
+    public int getTotalPrice()
+    {
+        // put your code here
+        return totalPrice;
+    }
+    
+    public void setId(int id)
+    {
+        // put your code here
+        
+    }
+    
+    public void setIdItem(int idItem)
+    {
+        // put your code here
+        
+    }
+    
+    public void setDate(char date)
+    {
+        // put your code here
+        
+    }
+    
+    public void setTotalPrice(int totalPrice)
+    {
+        // put your code here
+        
     }
 }

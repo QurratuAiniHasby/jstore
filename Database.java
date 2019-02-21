@@ -1,19 +1,19 @@
 
 /**
- * Write a description of class JStore here.
+ * Write a description of class Database here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class JStore
+public class Database
 {
     // instance variables - replace the example below with your own
-    
+    private int x;
 
     /**
-     * Constructor for objects of class JStore
+     * Constructor for objects of class Database
      */
-    public JStore()
+    public Database()
     {
         // initialise instance variables
         x = 0;

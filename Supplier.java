@@ -33,60 +33,60 @@ public class Supplier
     public int getId()
     {
         // put your code here
-        return 0;
+        return id;
     }
     
     public char getName()
     {
         // put your code here
-        return 0;
+        return name;
     }
     
     public char getEmail()
     {
         // put your code here
-        return 0;
+        return email;
     }
     
     public char getPhoneNumber()
     {
         // put your code here
-        return 0;
+        return phoneNumber;
     }
     
     public char getCity()
     {
         // put your code here
-        return 0;
+        return city;
     }
     
-    public int setId()
+    public void setId(int id)
     {
         // put your code here
         return 0;
     }
     
-    public char setName()
+    public void setName(char name)
     {
         // put your code here
-        return 0;
+        
     }
     
-    public char setEmail()
+    public void setEmail(char email)
     {
         // put your code here
-        return 0;
+        
     }
     
-    public char setPhoneNumber()
+    public void setPhoneNumber(char phoneNumber)
     {
         // put your code here
-        return 0;
+        
     }
     
-    public setCity()
+    public void setCity(char city)
     {
         // put your code here
-        return 0;
+        
     }
 }
