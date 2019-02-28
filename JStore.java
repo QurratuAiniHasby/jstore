@@ -2,8 +2,8 @@
 /**
  * Write a description of class JStore here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @Qurratu Aini Hasby
+ * @version 28/1/2019
  */
 import java.util.*;
 public class JStore

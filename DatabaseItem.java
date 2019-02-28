@@ -5,15 +5,16 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Database
+public class DatabaseItem
 {
     // instance variables - replace the example below with your own
     private String[] listItem;
+    private Item item;
 
     /**
      * Constructor for objects of class Database
      */
-    public Database()
+    public DatabaseItem()
     {
         // initialise instance variables
         
@@ -25,21 +26,28 @@ public class Database
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public void addItem()
+    public static boolean addItem()
     {
         // put your code here
         
+        return true;
     }
     
-    public void removeItem()
+    public static boolean removeItem()
     {
         // put your code here
-        
+        return true;
     }
     
-    public void getItemDatabase()
+    public Item getItem()
     {
         // put your code here
-        
+        return item;
+    }
+    
+    public String[] getItemDatabase()
+    {
+        // put your code here
+        return listItem;
     }
 }
