@@ -1,106 +1,95 @@
 
 /**
- * Write a description of class Item here.
+ * Class item berisi data tentang barang yang ada di JStore mulai dari nama,jumlah,harga,kategori dan penyuplainya.
  *
  * @Qurratu Aini Hasby
- * @version 28/1/2019
+ * @version 2.0
+ * Since 28/01/2019
  */
 public class Item
 {
-    // instance variables - replace the example below with your own
     private int id;
     private String name;
     private int stock;
     private int price;
     private String category;
     private static Supplier supplier;
-    
-    
+        
     /**
-     * Constructor for objects of class Item
+     * Constructor untuk class Item
      */
     public Item(int id, String name, int stock, int price, String category, Supplier supplier)
     {
-        // initialise instance variables
-        
+        this.id = id;
+        this.name = name;
+        this.stock = stock;
+        this.price = price;
+        this.category = category;
+        this.supplier = supplier;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Metode untuk mendapatkan nilai dari variable yang telah diinisiasikan
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
      */
     
     public int getId()
     {
-        // put your code here
-        return id;
+        return id; //metode untuk mendapatkan nilai id
     }
     
     public String getName()
     {
-        // put your code here
-        return name;
+        return name; //metode untuk mendapatkan nama barang
     }
     
     public int getStock()
     {
-        // put your code here
-        return stock;
+        return stock; //metode untuk mendapatkan jumlah barang yang ada
     }
     
     public int getPrice()
     {
-        // put your code here
-        return price;
+        return price; //metode untuk mendapatkan harga barang yang dipilih
     }
     
     public String getCategory()
     {
-        // put your code here
-        return category;
+        return category; //metode untuk mendapatkan kategori dari suatu barang
     }
     
     public Supplier getSupplier()
     {
-        // put your code here
-        return supplier;
+        return supplier; //metode untuk mendapatkan nama supplier dari suatu barang
     }
     
     public void setId(int id)
     {
-        // put your code here
-        this.id = id;
+        this.id = id; //metode untuk menetapkan nilai yang nantinya akan diambil oleh metode get
     }
     
     public void setName(String name)
     {
-        // put your code here
         this.name = name;
     }
     
     public void setStock(int stock)
     {
-        // put your code here
         this.stock = stock;
     }
     
     public void setPrice(int price)
     {
-        // put your code here
         this.price = price;
     }
     
     public void setCategory(String category)
     {
-        // put your code here
         this.category = category;
     }
     
     public void setSupplier(Supplier supplier)
     {
-        // put your code here
         this.supplier = supplier;
     }
     

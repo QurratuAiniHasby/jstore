@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=DatabaseItem
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Database\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Database\ untuk\ melihat\ list\ item\ yang\ ada\ di\ store,dan\ untuk\ melakukan\r\n\ penambahan\ item\ atau\ menghapus\ item\ yang\ sudah\ ada\r\n\r\n\ @Qurratu\ Aini\ Hasby\r\n\ @version\ 2.0\r\n\ Since\ 28/01/2019\r\n
 comment1.params=
 comment1.target=DatabaseItem()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Database\r\n
+comment1.text=\r\n\ Constructor\ untuk\ class\ Database\r\n
 comment2.params=
 comment2.target=boolean\ addItem()
-comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment2.text=\r\n\ class\ untuk\ database\ dari\ barang-barang\ JStore\r\n
 comment3.params=
 comment3.target=boolean\ removeItem()
 comment4.params=

@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=DatabaseSupplier
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseSupplier\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Database\ untuk\ melihat\ list\ supplier\ yang\ ada\ di\ jstore,dan\ untuk\ melakukan\r\n\ penambahan\ supplier\ atau\ menghapus\ supplier\ yang\ sudah\ ada\r\n\r\n\ @Qurratu\ Aini\ Hasby\r\n\ @version\ 2.0\r\n\ Since\ 28/01/2019\r\n
 comment1.params=
 comment1.target=DatabaseSupplier()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DatabaseSupplier\r\n
+comment1.text=\r\n\ Constructor\ untuk\ class\ DatabaseSupplier\r\n
 comment2.params=
 comment2.target=boolean\ addSupplier()
-comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment2.text=\r\n\ List\ untuk\ supplier\ barang\r\n
 comment3.params=
 comment3.target=boolean\ removeSupplier()
 comment4.params=

@@ -1,53 +1,44 @@
 
 /**
- * Write a description of class DatabaseSupplier here.
+ * Database untuk melihat list supplier yang ada di jstore,dan untuk melakukan
+ * penambahan supplier atau menghapus supplier yang sudah ada
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @Qurratu Aini Hasby
+ * @version 2.0
+ * Since 28/01/2019
  */
-public class DatabaseSupplier
-{
-    // instance variables - replace the example below with your own
+ public class DatabaseSupplier
+ {
     private String[] listSupplier;
     private static Supplier supplier;
-    
-
     /**
-     * Constructor for objects of class DatabaseSupplier
+     * Constructor untuk class DatabaseSupplier
      */
     public DatabaseSupplier()
     {
         // initialise instance variables
-        
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * List untuk supplier barang
      */
     public static boolean addSupplier()
     {
-        // put your code here
         return true;
     }
     
     public static boolean removeSupplier()
     {
-        // put your code here
         return true;
     }
     
     public Supplier getSupplier()
     {
-        // put your code here
         return supplier;
     }
     
     public String[] getListSupplier()
     {
-        // put your code here
         return listSupplier;
     }
-}
+ }

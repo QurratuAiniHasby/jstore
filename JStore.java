@@ -1,11 +1,11 @@
-
+import java.util.*;
 /**
  * Write a description of class JStore here.
  *
- * @Qurratu Aini Hasby
- * @version 28/1/2019
+ * @author (your name)
+ * @version (a version number or a date)
  */
-import java.util.*;
+
 public class JStore
 {
     // instance variables - replace the example below with your own
@@ -14,10 +14,12 @@ public class JStore
      */
     public JStore()
     {
+        
     }
-            // initialise instance variables
-    public static void main(String[] args){
     
+    public static void main(String[] args)
+    {
+            
     }
             
 }

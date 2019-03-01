@@ -1,53 +1,44 @@
 
 /**
- * Write a description of class Database here.
+ * Database untuk melihat list item yang ada di store,dan untuk melakukan
+ * penambahan item atau menghapus item yang sudah ada
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @Qurratu Aini Hasby
+ * @version 2.0
+ * Since 28/01/2019
  */
 public class DatabaseItem
 {
-    // instance variables - replace the example below with your own
     private String[] listItem;
     private Item item;
-
     /**
-     * Constructor for objects of class Database
+     * Constructor untuk class Database
      */
     public DatabaseItem()
     {
         // initialise instance variables
-        
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * class untuk database dari barang-barang JStore
      */
     public static boolean addItem()
     {
-        // put your code here
-        
         return true;
     }
     
     public static boolean removeItem()
     {
-        // put your code here
         return true;
     }
     
     public Item getItem()
     {
-        // put your code here
         return item;
     }
     
     public String[] getItemDatabase()
     {
-        // put your code here
-        return listItem;
+        return listItem; //mendapatkan list dari itemdatabase
     }
 }
