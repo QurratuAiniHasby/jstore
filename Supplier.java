@@ -1,12 +1,12 @@
 /**
- * Kelas untuk mendapatkan data supplier dari JStore
+ * Kelas untuk mendapatkan data supplier dengan lokasinya
  *
- * @Qurratu Aini Hasby
- * @version 2.0
- * Since 28/01/2019
+ * @author Qurratu Aini Hasby
+ * @version 28/01/2019
  */
 public class Supplier
 {
+    //variabel yang digunakan
     private int id;
     private String name;
     private String email;
@@ -14,7 +14,7 @@ public class Supplier
     private static Location location;
 
     /**
-     * Constructor untuk objek dari class Supplier
+     * Konstruktor dari kelas Supplier
      */
     public Supplier(int id, String name, String Email, String phoneNumber, Location location)
     {
@@ -25,66 +25,112 @@ public class Supplier
         this.location = location;
     }
     
+    //Menampilkan nomor id supplier
     /**
-     * Metode untuk mendapatkan nilai dari variable yang telah diinisiasikan
-     *
+     * Method getId()
+     * @return id
      */
     public int getId()
     {
-        return id; //untuk mendapatkan nilai dari hasil setIId
+        return id;
     }
     
+    //Menampilkan nama supplier
+    /**
+     * Method getName()
+     * @return name
+     */
     public String getName()
     {
         return name; //metode untuk mendapatkan nama supplier dari metode setNamae
     }
     
+    //Menampilkan email supplier
+    /**
+     * Method getEmail()
+     * @return email
+     */
     public String getEmail()
     {
-        return email; //metode untuk mendapatkan email supplier dari metode setEmail
+        return email;
     }
     
+    //Menampilkan nomor telepon supplier
+    /**
+     * Method getPhoneNumber()
+     * @return phoneNumber
+     */
     public String getPhoneNumber()
     {
-        return phoneNumber; //metode untuk mendapatkan nomor HP dari metode setPhoneNumber
+        return phoneNumber;
     }
     
+    //Menampilkan lokasi supplier
+    /**
+     * Method getLccation()
+     * @return location
+     */
     public Location getLocation()
     {
-        return location; //metode untuk mendapatkan lokasi dari metode setLocation
+        return location; 
     }
     
+    //Mengubah id supplier
+    /**
+     * Method setId()
+     * @param id
+     */
     public void setId(int id)
     {
         this.id = id;
     }
     
+    //Mengubah nama supplier
+    /**
+     * Method setName()
+     * @param name
+     */
     public void setName(String name)
     {
-        this.name = name; //metode untuk menetapkan nama dari supplier
+        this.name = name;
     }
     
+    //Mengubah email supplier
+    /**
+     * Method setEmail()
+     * @param email
+     */
     public void setEmail(String email)
     {
-        this.email = email; //metode untuk menetapkan email dari supplier
+        this.email = email;
     }
     
+    //Mengubah nomor telepon supplier
+    /**
+     * Method setPhoneNumber()
+     * @param phoneNumber
+     */
     public void setPhoneNumber(String phoneNumber)
     {
-        this.phoneNumber = phoneNumber; //metode untuk menetapkan nilai nomorHP dari supplier
+        this.phoneNumber = phoneNumber;
     }
     
+    //Mengubah lokasi supplier
+    /**
+     * Method setLocation()
+     * @param location
+     */
     public void setLocation(Location location)
     {
-        this.location = location; //metode untuk menetapkan lokasi dari supplier yang didapatkan dari class location
+        this.location = location;
     }
     
-    public void printData()//metode untuk mencetak nilai-nilai yang telah didapatkan dari metode get
+    //Mencetak nama supplier
+    /**
+     * Method printData()
+     */
+    public void printData()
     {
-        System.out.println("id" + id);
         System.out.println("Nama supplier" + name);
-        System.out.println("Email" + email);
-        System.out.println("Nomor HP supplier" + phoneNumber);
-        System.out.println("Lokasi dari supplier" + location);
     }
 }

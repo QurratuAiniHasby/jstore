@@ -1,42 +1,52 @@
 
 /**
- * Database untuk melihat list supplier yang ada di jstore,dan untuk melakukan
- * penambahan supplier atau menghapus supplier yang sudah ada
+ * Kelas untuk database  yang berisi informasi supplier 
  *
- * @Qurratu Aini Hasby
- * @version 2.0
- * Since 28/01/2019
+ * @author Qurratu Aini Hasby
+ * @version 28/01/2019
  */
  public class DatabaseSupplier
  {
+    //variabel yang digunakan pada kelas ini
     private String[] listSupplier;
     private static Supplier supplier;
-    /**
-     * Constructor untuk class DatabaseSupplier
-     */
-    public DatabaseSupplier()
-    {
-        // initialise instance variables
-    }
 
+    //Menambah supplier
     /**
-     * List untuk supplier barang
+     * Method addSupplier()
+     * @param supplier
+     * @return false
      */
     public static boolean addSupplier()
     {
         return true;
     }
     
+    //Menghapus supplier
+    /**
+     * Method remove Supplier()
+     * @param supplier
+     */
     public static boolean removeSupplier()
     {
         return true;
     }
     
+    //Menampilkan nama supplier
+    /**
+     * Method getSupplier()
+     * @return supplier
+     */
     public Supplier getSupplier()
     {
         return supplier;
     }
     
+    //Menampilkan list supplier
+    /**
+     * Method getListSupplier()
+     * @return listSupplier
+     */
     public String[] getListSupplier()
     {
         return listSupplier;

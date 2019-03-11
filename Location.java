@@ -1,18 +1,18 @@
 /**
- * Write a description of class Location here.
+ * Kelas yang digunakan untuk informasi lokasi dari supplier
  *
  * @Qurratu Aini Hasby
- * @version 2.0
- * Since 28/01/2019
+ * @version 28/01/2019
  */
 public class Location
 {
+    //variabel yang digunakan
     private String province;
     private String description;
     private String city;
 
     /**
-     * Constructor untuk class Location
+     * Konstruktor dari kelas Supplier
      */
     public Location(String province, String description, String city)
     {
@@ -21,43 +21,72 @@ public class Location
         this.city = city;
     }
 
+    //Menampilkan nama provinsi
     /**
-     * Metode untuk mendapatkan lokasi dari supplier
+     * Method getProvince()
+     * @return province
      */
     public String getProvince()
     {
         return province;
     }
     
+    //Menampilkan deskripsi lokasi
+    /**
+     * Method getDescription()
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
     
+    //Menampilkan nama kota
+    /**
+     * Method getCity()
+     * @return city
+     */
     public String getCity()
     {
         return city;
     }
     
+     //Mengganti nama provinsi
+    /**
+     * Method setProvince()
+     * @param province
+     */
     public void setProvince(String province)
     {
         this.province = province;
     }
     
+    //Mengganti deskripsi lokasi
+    /**
+     * Method setDescription()
+     * @param description
+     */
     public void setDescription(String description)
     {
         this.description = description;
     }
     
+     //Mengganti nama kota
+    /**
+     * Method setCity()
+     * @param city
+     */
     public void setCity(String city)
     {
         this.city = city;
     }
     
+    //Mencetak nama provinsi
+    /**
+     * Method printData()
+     */
     public void printData()
     {
         System.out.println("Province" + province);
-        System.out.println("Description" + description);
-        System.out.println("City" + city);
     }
 }

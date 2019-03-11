@@ -1,16 +1,16 @@
 #BlueJ class context
 comment0.target=DatabaseSupplier
-comment0.text=\r\n\ Database\ untuk\ melihat\ list\ supplier\ yang\ ada\ di\ jstore,dan\ untuk\ melakukan\r\n\ penambahan\ supplier\ atau\ menghapus\ supplier\ yang\ sudah\ ada\r\n\r\n\ @Qurratu\ Aini\ Hasby\r\n\ @version\ 2.0\r\n\ Since\ 28/01/2019\r\n
+comment0.text=\r\n\ Kelas\ untuk\ database\ \ yang\ berisi\ informasi\ supplier\ \r\n\r\n\ @author\ Qurratu\ Aini\ Hasby\r\n\ @version\ 28/01/2019\r\n
 comment1.params=
-comment1.target=DatabaseSupplier()
-comment1.text=\r\n\ Constructor\ untuk\ class\ DatabaseSupplier\r\n
+comment1.target=boolean\ addSupplier()
+comment1.text=\r\n\ Method\ addSupplier()\r\n\ @param\ supplier\r\n\ @return\ false\r\n
 comment2.params=
-comment2.target=boolean\ addSupplier()
-comment2.text=\r\n\ List\ untuk\ supplier\ barang\r\n
+comment2.target=boolean\ removeSupplier()
+comment2.text=\r\n\ Method\ remove\ Supplier()\r\n\ @param\ supplier\r\n
 comment3.params=
-comment3.target=boolean\ removeSupplier()
+comment3.target=Supplier\ getSupplier()
+comment3.text=\r\n\ Method\ getSupplier()\r\n\ @return\ supplier\r\n
 comment4.params=
-comment4.target=Supplier\ getSupplier()
-comment5.params=
-comment5.target=java.lang.String[]\ getListSupplier()
-numComments=6
+comment4.target=java.lang.String[]\ getListSupplier()
+comment4.text=\r\n\ Method\ getListSupplier()\r\n\ @return\ listSupplier\r\n
+numComments=5

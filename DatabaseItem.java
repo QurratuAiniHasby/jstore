@@ -1,44 +1,56 @@
 
 /**
- * Database untuk melihat list item yang ada di store,dan untuk melakukan
- * penambahan item atau menghapus item yang sudah ada
+ * Kelas yang berisi database informasi list item yang ada di store
+ * dan dapat digunakan untuk melakukan penambahan atau penghapusan item
  *
- * @Qurratu Aini Hasby
- * @version 2.0
- * Since 28/01/2019
+ * @author Qurratu Aini Hasby
+ * @version 28/01/2019
  */
 public class DatabaseItem
 {
+    //variabel yang digunakan pada kelas ini
     private String[] listItem;
     private Item item;
+    
+    //Penambahan item
     /**
-     * Constructor untuk class Database
+     * Method addItem()
+     * @param item
+     * @return false
      */
-    public DatabaseItem()
+    public static boolean addItem(Item item)
     {
-        // initialise instance variables
-    }
-
-    /**
-     * class untuk database dari barang-barang JStore
-     */
-    public static boolean addItem()
-    {
-        return true;
+        return false;
     }
     
-    public static boolean removeItem()
+    //Penghapusan Item
+    /**
+     * Method removeItem()
+     * @param item
+     * @return false
+     */
+    public static boolean removeItem(Item item)
     {
-        return true;
+        return false;
     }
     
+    //Menampilkan Item
+    /**
+     * Method getItem()
+     * @return item
+     */
     public Item getItem()
     {
         return item;
     }
     
+    //Menampilkan database list item
+    /**
+     * Method getItemDatabase()
+     * @return listItem
+     */
     public String[] getItemDatabase()
     {
-        return listItem; //mendapatkan list dari itemdatabase
+        return listItem;
     }
 }

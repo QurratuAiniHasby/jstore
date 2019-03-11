@@ -2,7 +2,7 @@ import java.util.*;
 /**
  * Write a description of class JStore here.
  *
- * @author (your name)
+ * @author Qurratu Aini Hasby
  * @version (a version number or a date)
  */
 
