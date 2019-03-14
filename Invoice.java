@@ -12,16 +12,19 @@ public class Invoice
     private static Item item;
     private String date;
     private int totalPrice;
+    private int totalItem;
+    private static InvoiceStatus status;
 
     /**
      * Konstruktor dari kelas Invoice
      */
-    public Invoice(int id, Item item, String date, int totalPrice)
+    public Invoice(int id, Item item, String date, int totalPrice, int totalItem, InvoiceStatus status)
     {
         this.id = id;
         this.item = item;
         this.date = date;
         this.totalPrice = totalPrice;
+        this.totalItem = totalItem;
     }
 
     //Menampilkan nomor id invoice
@@ -64,6 +67,24 @@ public class Invoice
         return totalPrice;//metode get untuk mengembalikan total harga yang harus dibayarkan
     }
     
+    /**
+     * Method getTotalitem()
+     * @return totalItem
+     */
+    public int getTotalItem()
+    {
+        return totalItem;//metode get untuk mengembalikan total harga yang harus dibayarkan
+    }
+    
+    /**
+     * Method getInvoiceStatus()
+     * @return invoiceStatus
+     */
+    public InvoiceStatus getInvoiceStatus()
+    {
+        return status;
+    }
+    
     //Mengubah id Item
     /**
      * Method setId()
@@ -81,7 +102,7 @@ public class Invoice
      */
     public void setItem(Item item)
     {
-        this.item = item; //metode untuk mendapatkan nama barang yang didapatkan dari class item
+        this.item = item;
     }
     
     //Mengubah tanggal
@@ -91,7 +112,7 @@ public class Invoice
      */
     public void setDate(String date)
     {
-        this.date = date; //metode untuk menetapkan tanggal pembelian
+        this.date = date;
     }
     
     //Mengubah total harga
@@ -101,7 +122,25 @@ public class Invoice
      */
     public void setTotalPrice(int totalPrice)
     {
-        this.totalPrice = totalPrice; //metode untuk menetapkan harga yang harus dibayarkan
+        this.totalPrice = totalPrice;
+    }
+    
+    /**
+     * Method setTotalItem()
+     * @param totalItem
+     */
+    public void setTotalItem(int totalItem)
+    {
+        this.totalItem = totalItem; //metode untuk menetapkan harga yang harus dibayarkan
+    }
+    
+    /**
+     * Method setInvoiceStatus()
+     * @param invoiceStatus
+     */
+    public void setInvoiceStatus(InvoiceStatus status)
+    {
+        this.status = status; //metode untuk menetapkan harga yang harus dibayarkan
     }
     
     //Mencetak total harga
@@ -110,6 +149,12 @@ public class Invoice
      */
     public void printData()//metode untuk mencetak hasil yang didapatkan dai metode get
     {
-        System.out.println("Total yang harus dibayarkan" + totalPrice);
+        System.out.println("=====INVOICE=====");
+        System.out.println("ID " + id);
+        System.out.println("Tanggal " + date);
+        System.out.println("Item " + item.getName());
+        System.out.println("Total Item " + totalItem);
+        System.out.println("Total Harga " + totalPrice);
+        System.out.println("Status " + status);
     }
 }

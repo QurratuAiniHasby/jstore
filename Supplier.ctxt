@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Supplier
 comment0.text=\r\n\ Kelas\ untuk\ mendapatkan\ data\ supplier\ dengan\ lokasinya\r\n\r\n\ @author\ Qurratu\ Aini\ Hasby\r\n\ @version\ 28/01/2019\r\n
-comment1.params=id\ name\ Email\ phoneNumber\ location
+comment1.params=id\ name\ email\ phoneNumber\ location
 comment1.target=Supplier(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ Location)
 comment1.text=\r\n\ Konstruktor\ dari\ kelas\ Supplier\r\n
 comment10.params=phoneNumber

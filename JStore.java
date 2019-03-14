@@ -19,7 +19,21 @@ public class JStore
     
     public static void main(String[] args)
     {
-            
+        Location home = new Location("JABAR", "Ramai", "Bekasi");
+        Supplier supplier1 = new Supplier(1, "Aini", "qurratuainihasby@gmail.com", "081283929086", home);
+               
+        home.printData();
+        supplier1.printData();
+        
+        Transaction bayar = new Transaction();
+        bayar.orderNewItem(supplier1);
+        Transaction tesbayar = new Transaction();
+        tesbayar.orderNewItem(supplier1);
+        tesbayar.orderSecondItem(supplier1);
+        tesbayar.orderRefurbishedItem(supplier1);
+        tesbayar.sellItemPaid(DatabaseItem.getItem());
+        tesbayar.sellItemUnpaid(DatabaseItem.getItem());
+        tesbayar.sellItemInstallment(DatabaseItem.getItem());
     }
             
 }

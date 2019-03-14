@@ -16,7 +16,7 @@ public class Supplier
     /**
      * Konstruktor dari kelas Supplier
      */
-    public Supplier(int id, String name, String Email, String phoneNumber, Location location)
+    public Supplier(int id, String name, String email, String phoneNumber, Location location)
     {
         this.id = id;
         this.name = name;
@@ -42,7 +42,7 @@ public class Supplier
      */
     public String getName()
     {
-        return name; //metode untuk mendapatkan nama supplier dari metode setNamae
+        return name;
     }
     
     //Menampilkan email supplier
@@ -131,6 +131,11 @@ public class Supplier
      */
     public void printData()
     {
-        System.out.println("Nama supplier" + name);
+        System.out.println("=====SUPPLIER=====");
+        System.out.println("ID " + id);
+        System.out.println("Nama " + name);
+        System.out.println("Alamat Email " + email);
+        System.out.println("Nomor Telepon " + phoneNumber);
+        System.out.println("Lokasi supplier " + location.getCity());
     }
 }

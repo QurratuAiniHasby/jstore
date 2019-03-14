@@ -12,13 +12,14 @@ public class Item
     private String name;
     private int stock;
     private int price;
-    private String category;
+    private static ItemCategory category;
+    private static ItemStatus status;
     private static Supplier supplier;
         
     /**
      * Konstruktor dari kelas Item
      */
-    public Item(int id, String name, int stock, int price, String category, Supplier supplier)
+    public Item(int id, String name, int stock, int price, ItemCategory category, ItemStatus status, Supplier supplier)
     {
         this.id = id;
         this.name = name;
@@ -26,6 +27,7 @@ public class Item
         this.price = price;
         this.category = category;
         this.supplier = supplier;
+        this.status = status;
     }
 
     //Menampilkan nomor id
@@ -73,7 +75,7 @@ public class Item
      * Method getCategory()
      * @return category
      */
-    public String getCategory()
+    public ItemCategory getCategory()
     {
         return category; //metode untuk mendapatkan kategori dari suatu barang
     }
@@ -88,6 +90,14 @@ public class Item
         return supplier; //metode untuk mendapatkan nama supplier dari suatu barang
     }
     
+    /**
+     * Method getStatus()
+     * @return status
+     */
+    public ItemStatus getStatus()
+    {
+        return status; //metode untuk mendapatkan nama supplier dari suatu barang
+    }
     //Mengganti nomor id
     /**
      * Method setId()
@@ -133,7 +143,7 @@ public class Item
      * Method setCategory()
      * @param category
      */
-    public void setCategory(String category)
+    public void setCategory(ItemCategory category)
     {
         this.category = category;
     }
@@ -148,12 +158,27 @@ public class Item
         this.supplier = supplier;
     }
     
+    /**
+     * Method setStatus()
+     * @param status
+     */
+    public void setStatus(ItemStatus status)
+    {
+        this.status = status;
+    }
+    
     //Mencetak nama Item
     /**
      * Method printData()
      */
     public void printData()
     {
-        System.out.println("Nama" + name);
+        System.out.println("=====ITEM===== ");
+        System.out.println("ID " + id);
+        System.out.println("Nama " + name);
+        System.out.println("Stok " + stock);
+        System.out.println("Kategori " + category);
+        System.out.println("Status " + status);
+        System.out.println("Supplier " + supplier.getName());
     }
 }
