@@ -7,5 +7,15 @@
  */
 public enum InvoiceStatus
 {
-    Paid, Unpaid, Installment
+    Paid("paid"), Unpaid("unpaid"), Installment("installment");
+    
+    String invoice;
+    
+    InvoiceStatus(String invoice){
+        this.invoice = invoice;
+    }
+    
+    public String invoice(){
+        return invoice;
+    }
 }

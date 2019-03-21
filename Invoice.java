@@ -1,26 +1,26 @@
-
 /**
  * Kelas yang digunakan untuk memberikan informasi Invoice pembelian barang beserta itemnya
  *
  * @author Qurratu Aini Hasby
  * @version 28/01/2019
  */
-public class Invoice
+public abstract class Invoice
 {
     //variabel yang digunakan
     private int id;
     private static Item item;
     private String date;
-    private int totalPrice;
+    protected int totalPrice;
     private int totalItem;
+    private static InvoiceType type;
     private static InvoiceStatus status;
 
     /**
      * Konstruktor dari kelas Invoice
      */
-    public Invoice(int id, Item item, String date, int totalPrice, int totalItem, InvoiceStatus status)
-    {
-        this.id = id;
+    public Invoice(int id, Item item, String date, int totalItem, int totalPrice)
+   {
+       this.id = id;
         this.item = item;
         this.date = date;
         this.totalPrice = totalPrice;
@@ -143,18 +143,21 @@ public class Invoice
         this.status = status; //metode untuk menetapkan harga yang harus dibayarkan
     }
     
+        
+    public InvoiceType getInvoiceType()
+    {
+            return type;
+    }
+    
     //Mencetak total harga
     /**
      * Method printData()
      */
-    public void printData()//metode untuk mencetak hasil yang didapatkan dai metode get
-    {
-        System.out.println("=====INVOICE=====");
-        System.out.println("ID " + id);
-        System.out.println("Tanggal " + date);
-        System.out.println("Item " + item.getName());
-        System.out.println("Total Item " + totalItem);
-        System.out.println("Total Harga " + totalPrice);
-        System.out.println("Status " + status);
-    }
+    public abstract void printData();
+    
+        
+    
+    
+    
+    
 }

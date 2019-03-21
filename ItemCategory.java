@@ -7,5 +7,15 @@
  */
 public enum ItemCategory
 {
-    Electronics, Furniture, Stationery
+    Electronics("elektronik"), Furniture("furnitur"), Stationery("stationery");
+    
+    String category;
+    
+    ItemCategory(String category){
+        this.category = category;
+    }
+    
+    public String kategori(){
+        return category;
+    }
 }
