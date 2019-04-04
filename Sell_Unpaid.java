@@ -1,11 +1,17 @@
-public class Sell_Unpaid extends Invoice{
-        private InvoiceType INVOICE_TYPE = InvoiceType.Sell;
+import java.util.*; 
+ public class Sell_Unpaid extends Invoice{
+       private InvoiceType INVOICE_TYPE = InvoiceType.Sell;
         private InvoiceStatus INVOICE_STATUS = InvoiceStatus.Unpaid;
-        private String dueDate;
+        private Calendar dueDate;
+        private static Customer customer;
         
-        public Sell_Unpaid(int id, Item item, String date, int totalItem, int totalPrice, String dueDate){
-            super(id, item, date, totalPrice, totalItem);
-            this.dueDate = dueDate;
+        public Sell_Unpaid(int id, Item item, int totalItem, Customer customer){
+            super(id, item, totalItem);
+            this.customer = customer;
+            
+            this.dueDate = new GregorianCalendar();
+            dueDate.add((GregorianCalendar.DATE), 1);
+            
         }
         
         public InvoiceStatus getInvoiceStatus()
@@ -18,23 +24,33 @@ public class Sell_Unpaid extends Invoice{
             return INVOICE_TYPE;
         }
         
-        public String getDueDate()
+        public Calendar getDueDate()
         {
             return dueDate;
         }
-
-        public void printData()
+        
+        public Customer getCustomer()
         {
-        System.out.println("=====INVOICE===== ");
-        System.out.println("ID " + super.getId());
-        System.out.println("Item " + super.getItem());
-        System.out.println("Date " + super.getDate());
-        System.out.println("Total Item " + super.getTotalItem());
-        System.out.println("Total Price " + super.getTotalPrice());
-        System.out.println("Status: " + getInvoiceStatus());
-        System.out.println("Invoice Type: " + getInvoiceType());
-        System.out.println("DueDate " + dueDate);
+            return customer;
         }
+        
+        public void setCustomer(Customer customer)
+        {
+            this.customer = customer;
+        }
+        
+        public void setDueDate(Calendar dueDate)
+        {
+            this.dueDate = dueDate;
+        }
+        
+        public void setInvoiceStatus(InvoiceStatus status)
+    {
+    }
+    
+         public String toString() { 
+             return ""; 
+            }
         
     }
         

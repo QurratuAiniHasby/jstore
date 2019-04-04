@@ -2,8 +2,8 @@ public class Buy_Paid extends Invoice{
         public InvoiceType INVOICE_TYPE = InvoiceType.Buy;
         public InvoiceStatus INVOICE_STATUS = InvoiceStatus.Paid;
         
-        public Buy_Paid(int id, Item item, String date, int totalItem, int totalPrice){
-            super(id, item, date, totalItem, totalPrice);
+        public Buy_Paid(int id, Item item, int totalItem){
+            super(id, item, totalItem);
         }
         
         public InvoiceStatus getInvoiceStatus()
@@ -16,15 +16,10 @@ public class Buy_Paid extends Invoice{
             return INVOICE_TYPE;
         }
         
-        public void printData()
-        {
-        System.out.println("=====INVOICE===== ");
-        System.out.println("ID " + super.getId());
-        System.out.println("Item " + super.getItem());
-        System.out.println("Date " + super.getDate());
-        System.out.println("Status: " + getInvoiceStatus());
-        System.out.println("Invoice Type: " + getInvoiceType());
-        System.out.println("Total Item " + super.getTotalItem());
-        System.out.println("Total Price " + super.getTotalPrice());
-        }
+        
+        
+         public String toString() 
+    { 
+       return ""; 
+    }
     }

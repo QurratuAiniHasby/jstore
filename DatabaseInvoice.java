@@ -1,20 +1,20 @@
 
 /**
- * Write a description of class DatabaseSupplier here.
+ * Write a description of class DatabaseInvoice here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class DatabaseSupplier
+public class DatabaseInvoice
 {
     // instance variables - replace the example below with your own
-    private Supplier[] listSupplier;
-    private Supplier Supplier;
+    private Invoice[] listInvoice;
+    private Invoice invoice;
 
     /**
-     * Constructor for objects of class DatabaseSupplier
+     * Constructor for objects of class DatabaseInvoice
      */
-    public DatabaseSupplier()
+    public DatabaseInvoice()
     {
         // initialise instance variables
     }
@@ -24,7 +24,7 @@ public class DatabaseSupplier
      *
      * @return    false
      */
-    public static boolean addSupplier(Supplier Supplier)
+    public static boolean addInvoice(Invoice invoice)
     {
         return false;
     }
@@ -33,7 +33,7 @@ public class DatabaseSupplier
      * Method untuk menghapus supplier dari list
      *
      */
-    public void removeSupplier(Supplier Supplier)
+    public void removeInvoice(Invoice invoice)
     {
         // put your code here
     }
@@ -43,9 +43,9 @@ public class DatabaseSupplier
      *
      * @return    objek supplier
      */
-    public Supplier getSupplier()
+    public Invoice getInvoice()
     {
-        return Supplier;
+        return invoice;
     }
     
     /**
@@ -53,8 +53,8 @@ public class DatabaseSupplier
      *
      * @return    list supplier
      */
-    public Supplier[] getListSupplier()
+    public Invoice[] getListInvoice()
     {
-        return listSupplier;
+        return listInvoice;
     }
 }

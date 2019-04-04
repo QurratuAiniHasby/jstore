@@ -3,11 +3,13 @@ public class Sell_Installment extends Invoice{
         private InvoiceStatus INVOICE_STATUS = InvoiceStatus.Installment;
         private int installmentPeriod;
         private int installmentPrice;
+        private static Customer customer;
         
-        public Sell_Installment(int id, Item item, String date, int totalItem, int totalPrice, int installmentPeriod, int installmentPrice){
-            super(id, item, date, totalItem, totalPrice);
+        
+        public Sell_Installment(int id, Item item, int totalItem, int installmentPeriod, Customer customer){
+            super(id, item,totalItem);
             this.installmentPeriod = installmentPeriod;
-            this.installmentPrice = installmentPrice;
+            this.customer = customer;
         }
         
         public InvoiceStatus getInvoiceStatus()
@@ -30,6 +32,11 @@ public class Sell_Installment extends Invoice{
             return installmentPrice;
         }
         
+        public Customer getCustomer()
+        {
+            return customer;
+        }
+        
         public void setInstallmentPrice()
         {
             double installmentPrice = (totalPrice/installmentPeriod) * 1.02;
@@ -41,17 +48,16 @@ public class Sell_Installment extends Invoice{
             this.totalPrice = installmentPrice * installmentPeriod;
         }
         
-        public void printData()
+        public void setCustomer(Customer customer)
         {
-        System.out.println("=====INVOICE===== ");
-        System.out.println("ID " + super.getId());
-        System.out.println("Item " + super.getItem());
-        System.out.println("Date " + super.getDate());
-        System.out.println("Total Item " + super.getTotalItem());
-        System.out.println("Total Price " + super.getTotalPrice());
-        System.out.println("Status: " + getInvoiceStatus());
-        System.out.println("Invoice Type: " + getInvoiceType());
-        System.out.println("installmentPeriod : " + installmentPeriod);
-        System.out.println("installmentPrice : " + installmentPrice);
+            this.customer = customer;
         }
+        
+        public void setInvoiceStatus(InvoiceStatus status)
+    {
     }
+             public String toString() 
+    { 
+       return ""; 
+    }
+ }

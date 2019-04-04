@@ -23,6 +23,6 @@ comment7.params=city
 comment7.target=void\ setCity(java.lang.String)
 comment7.text=\r\n\ Method\ setCity()\r\n\ @param\ city\r\n
 comment8.params=
-comment8.target=void\ printData()
+comment8.target=java.lang.String\ toString()
 comment8.text=\r\n\ Method\ printData()\r\n
 numComments=9

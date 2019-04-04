@@ -1,3 +1,7 @@
+
+
+
+import java.util.Calendar;
 /**
  * Kelas yang digunakan untuk memberikan informasi Invoice pembelian barang beserta itemnya
  *
@@ -8,23 +12,23 @@ public abstract class Invoice
 {
     //variabel yang digunakan
     private int id;
-    private static Item item;
-    private String date;
+    private Item item;
+    private Calendar date;
     protected int totalPrice;
     private int totalItem;
-    private static InvoiceType type;
-    private static InvoiceStatus status;
+    private InvoiceStatus status;
+    private InvoiceType type;
 
     /**
      * Konstruktor dari kelas Invoice
      */
-    public Invoice(int id, Item item, String date, int totalItem, int totalPrice)
+    public Invoice(int id, Item item, int totalItem)
    {
-       this.id = id;
+        this.id = id;
         this.item = item;
-        this.date = date;
-        this.totalPrice = totalPrice;
         this.totalItem = totalItem;
+        
+        setTotalPrice(item.getPrice()*totalItem);
     }
 
     //Menampilkan nomor id invoice
@@ -52,7 +56,7 @@ public abstract class Invoice
      * Method getDate()
      * @return date
      */
-    public String getDate()
+    public Calendar getDate()
     {
         return date; //untuk mendapatkan data tanggal pembelian
     }
@@ -64,7 +68,7 @@ public abstract class Invoice
      */
     public int getTotalPrice()
     {
-        return totalPrice;//metode get untuk mengembalikan total harga yang harus dibayarkan
+        return this.totalPrice;//metode get untuk mengembalikan total harga yang harus dibayarkan
     }
     
     /**
@@ -73,18 +77,12 @@ public abstract class Invoice
      */
     public int getTotalItem()
     {
-        return totalItem;//metode get untuk mengembalikan total harga yang harus dibayarkan
+        return this.totalItem;//metode get untuk mengembalikan total harga yang harus dibayarkan
     }
     
-    /**
-     * Method getInvoiceStatus()
-     * @return invoiceStatus
-     */
-    public InvoiceStatus getInvoiceStatus()
-    {
-        return status;
-    }
+    public abstract InvoiceStatus getInvoiceStatus();
     
+    public abstract InvoiceType getInvoiceType();
     //Mengubah id Item
     /**
      * Method setId()
@@ -110,7 +108,7 @@ public abstract class Invoice
      * Method setDate()
      * @param date
      */
-    public void setDate(String date)
+    public void setDate(Calendar date)
     {
         this.date = date;
     }
@@ -134,26 +132,10 @@ public abstract class Invoice
         this.totalItem = totalItem; //metode untuk menetapkan harga yang harus dibayarkan
     }
     
-    /**
-     * Method setInvoiceStatus()
-     * @param invoiceStatus
-     */
-    public void setInvoiceStatus(InvoiceStatus status)
-    {
-        this.status = status; //metode untuk menetapkan harga yang harus dibayarkan
+     public String toString() 
+    { 
+       return ""; 
     }
-    
-        
-    public InvoiceType getInvoiceType()
-    {
-            return type;
-    }
-    
-    //Mencetak total harga
-    /**
-     * Method printData()
-     */
-    public abstract void printData();
     
         
     

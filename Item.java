@@ -171,14 +171,8 @@ public class Item
     /**
      * Method printData()
      */
-    public void printData()
-    {
-        System.out.println("=====ITEM===== ");
-        System.out.println("ID " + id);
-        System.out.println("Nama " + name);
-        System.out.println("Stok " + stock);
-        System.out.println("Kategori " + category);
-        System.out.println("Status " + status);
-        System.out.println("Supplier " + supplier.getName());
+     public String toString() 
+    { 
+       return ""; 
     }
 }

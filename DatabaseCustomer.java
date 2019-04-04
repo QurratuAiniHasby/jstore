@@ -1,20 +1,20 @@
 
 /**
- * Write a description of class DatabaseSupplier here.
+ * Write a description of class DatabaseCustomer here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class DatabaseSupplier
+public class DatabaseCustomer
 {
     // instance variables - replace the example below with your own
-    private Supplier[] listSupplier;
-    private Supplier Supplier;
+    private Customer[] listCustomer;
+    private Customer Customer;
 
     /**
-     * Constructor for objects of class DatabaseSupplier
+     * Constructor for objects of class DatabaseCustomer
      */
-    public DatabaseSupplier()
+    public DatabaseCustomer()
     {
         // initialise instance variables
     }
@@ -24,7 +24,7 @@ public class DatabaseSupplier
      *
      * @return    false
      */
-    public static boolean addSupplier(Supplier Supplier)
+    public static boolean addCustomer(Customer Customer)
     {
         return false;
     }
@@ -33,7 +33,7 @@ public class DatabaseSupplier
      * Method untuk menghapus supplier dari list
      *
      */
-    public void removeSupplier(Supplier Supplier)
+    public void removeCustomer(Customer Customer)
     {
         // put your code here
     }
@@ -43,9 +43,9 @@ public class DatabaseSupplier
      *
      * @return    objek supplier
      */
-    public Supplier getSupplier()
+    public Customer getCustomer()
     {
-        return Supplier;
+        return Customer;
     }
     
     /**
@@ -53,8 +53,8 @@ public class DatabaseSupplier
      *
      * @return    list supplier
      */
-    public Supplier[] getListSupplier()
+    public Customer[] getListCustomer()
     {
-        return listSupplier;
+        return listCustomer;
     }
 }

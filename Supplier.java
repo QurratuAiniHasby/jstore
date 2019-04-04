@@ -129,13 +129,8 @@ public class Supplier
     /**
      * Method printData()
      */
-    public void printData()
-    {
-        System.out.println("=====SUPPLIER=====");
-        System.out.println("ID " + id);
-        System.out.println("Nama " + name);
-        System.out.println("Alamat Email " + email);
-        System.out.println("Nomor Telepon " + phoneNumber);
-        System.out.println("Lokasi supplier " + location.getCity());
+     public String toString() 
+    { 
+       return ""; 
     }
 }

@@ -59,7 +59,7 @@ public class Transaction
         }
    }
     
-    public void sellItemPaid(Item item)
+    public void sellItemPaid(Item item, Customer customer)
     {
         System.out.println("=====Sell Item Paid=====");
         Invoice invoice1= new Sell_Paid(2, item, "21 Maret 2019", 100, item.getPrice());
@@ -73,7 +73,7 @@ public class Transaction
         invoice1.printData();
     }
     
-    public void sellItemUnpaid(Item item)
+    public void sellItemUnpaid(Item item, Customer customer)
     {
         Invoice invoice3 = new Sell_Unpaid(3, item, "21 Mar 2019", 100, item.getPrice(), "12-maret 2019");
         InvoiceStatus invoicestatus5 = InvoiceStatus.Unpaid;
@@ -85,7 +85,7 @@ public class Transaction
         invoice3.printData();
     }
     
-    public void sellItemInstallment(Item item)
+    public void sellItemInstallment(Item item, Customer customer)
     {
         Invoice invoice4= new Sell_Installment(4, item, "21 Mar 2019", 100, item.getPrice(), 40, 3);
         InvoiceStatus invoicestatus6 = InvoiceStatus.Installment;
