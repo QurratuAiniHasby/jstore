@@ -2,7 +2,7 @@
  * Kelas yang digunakan untuk informasi lokasi dari supplier
  *
  * @Qurratu Aini Hasby
- * @version 28/01/2019
+ * @version 11/04/2019
  */
 public class Location
 {
@@ -87,6 +87,10 @@ public class Location
      */
      public String toString() 
     { 
-       return ""; 
+        System.out.println("==========LOCATION==========");
+        System.out.println("Provinsi : " + province);
+        System.out.println("Kota : " + city);
+        System.out.println("Deskripsi : " + description);
+        return ""; 
     }
 }

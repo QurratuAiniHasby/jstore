@@ -1,58 +1,56 @@
-    import java.util.Calendar;
-    import java.util.GregorianCalendar;
-    import java.text.SimpleDateFormat;
-    import java.util.*;
-    import java.text.*;
-    import java.util.regex.*;
+import java.util.*;
+import java.text.*;
+import java.util.regex.*;
     /**
-     * Write a description of class Customer here.
+     * Kelas yang berisi informasi seorang customer.
      *
-     * @author (your name)
-     * @version (a version number or a date)
+     * @author Qurratu Aini Hasby
+     * @version 11/04/2019
      */
- public class Customer
-    {
+    
+public class Customer
+{
         // instance variables - replace the example below with your own
+        private int id;
         private String name;
         private String email;
         private String username;
         private String password;
-        private int id;
         private Calendar birthDate;
+        private SimpleDateFormat dateFormat = new SimpleDateFormat ("dd MMM yyy");
 
     /**
      * Constructor for objects of class Customer
      */
-    public Customer(String name, String email, String username, String password, int id, Calendar birthDate)
+    public Customer(String name, String email, String username, String password, 
+    Calendar birthDate)
     {
-        // initialise instance variables
-        this.name=name;
-        this.email=email;
-        this.username=username;
-        this.password=password;
-        this.id=id;
-        this.birthDate=birthDate;
-         
+        this.id = DatabaseCustomer.getLastCustomerID() + 1;
+        this.name = name; 
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.birthDate = birthDate;
     }
-   
-    public Customer(String name, String email, String username, String password, int id, int year, int month, int dayOfMonth)
+    
+    public Customer(String name, String email, String username, String password, 
+    int year, int month, int dayOfMonth)
     {
-        // initialise instance variables
-        this.name=name;
-        this.email=email;
-        this.username=username;
-        this.password=password;
-        this.id=id;
-        this.birthDate=birthDate;
-        this.birthDate = new GregorianCalendar(year, month, dayOfMonth);
+        this.id = DatabaseCustomer.getLastCustomerID() + 1;
+        this.name = name;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.id = id;
+        this.birthDate = new GregorianCalendar(year, (month-1), dayOfMonth);
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
+    * An example of a method - replace this comment with your own
+    *
+    * @param  y  a sample parameter for a method
+    * @return    the sum of x and y
+    */
     public String getName()
     {
         // put your code here
@@ -86,10 +84,7 @@
     
     public Calendar getBirthDate()
     {
-         // SimpleDateFormat ft = new SimpleDateFormat("dd MMMMMMMMMMMMMM YYY");
-        // System.out.println("Birth Date:" + ft.format(birthDate.getTime()));
-        // return birthDate;
-        System.out.printf("%1$s %2$td %2$tB %2$tY", "Birth date:", birthDate);
+        System.out.println("Birth date: " + dateFormat.format(birthDate.getTime()));
         return birthDate;
     }
     
@@ -102,18 +97,16 @@
     public void setEmail(String email)
     {
         // put your code here
-        String pattern =  "^[a-zA-Z0-9_+&*-]+(?:\\."+  
-                            "[a-zA-Z0-9_+&*-]+)*@" +  
-                            "(?:[a-zA-Z0-9-]+\\.)+[a-z" +  
-                            "A-Z]{2,7}$";
-        Pattern p = Pattern.compile(pattern);
-        Matcher m = p.matcher(email);
-        if (m.find()) {
-            System.out.println("Email : " + m.group());
+        if(Pattern.matches("^[a-zA-Z0-9_+&*-]+(?:\\."+ 
+                            "[a-zA-Z0-9_+&*-]+)*@" + 
+                            "(?:[a-zA-Z0-9-]+\\.)+[a-z" + 
+                            "A-Z]{2,7}$", email))
+        {
             this.email = email;
-        } else {
-            System.out.println("Email : null");
-            this.email = email;
+        }
+        else
+        {
+            this.email = "";
         }
     }
     
@@ -158,9 +151,9 @@
         
     }
     
-    public String toString()
+   public String toString()
     {
         // put your code here
-        return "";
+       return name + "" + email + "" + username + "" + password + "" + id + "" + birthDate + "";
     }
 }

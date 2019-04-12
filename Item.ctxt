@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Item
-comment0.text=\r\n\ Kelas\ yang\ digunakan\ untuk\ informasi\ dari\ Item\ di\ Jstore\ beseta\ itemnya\r\n\r\n\ @author\ Qurratu\ Aini\ Hasby\r\n\ @version\ 28/01/2019\r\n
-comment1.params=id\ name\ stock\ price\ category\ status\ supplier
-comment1.target=Item(int,\ java.lang.String,\ int,\ int,\ ItemCategory,\ ItemStatus,\ Supplier)
+comment0.text=\r\n\ Kelas\ yang\ digunakan\ untuk\ informasi\ dari\ Item\ di\ Jstore\ beseta\ itemnya\r\n\r\n\ @author\ Qurratu\ Aini\ Hasby\r\n\ @version\ 11/04/2019\r\n
+comment1.params=name\ stock\ price\ category\ status\ supplier
+comment1.target=Item(java.lang.String,\ int,\ int,\ ItemCategory,\ ItemStatus,\ Supplier)
 comment1.text=\r\n\ Konstruktor\ dari\ kelas\ Item\r\n
 comment10.params=name
 comment10.target=void\ setName(java.lang.String)
@@ -27,10 +27,10 @@ comment16.target=java.lang.String\ toString()
 comment16.text=\r\n\ Method\ printData()\r\n
 comment2.params=
 comment2.target=int\ getId()
-comment2.text=\r\n\ Method\ getId()\r\n\ @return\ id\r\n
+comment2.text=\r\n\ Method\ getId()\r\n\ @return\ id\ item\r\n
 comment3.params=
 comment3.target=java.lang.String\ getName()
-comment3.text=\r\n\ Method\ getName()\r\n\ @return\ name\r\n
+comment3.text=\r\n\ Method\ getName()\r\n\ @return\ nama\ item\r\n
 comment4.params=
 comment4.target=int\ getStock()
 comment4.text=\r\n\ Method\ getStock()\r\n\ @return\ stock\r\n

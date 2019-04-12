@@ -2,7 +2,7 @@
  * Kelas untuk mendapatkan data supplier dengan lokasinya
  *
  * @author Qurratu Aini Hasby
- * @version 28/01/2019
+ * @version 11/04/2019
  */
 public class Supplier
 {
@@ -16,9 +16,9 @@ public class Supplier
     /**
      * Konstruktor dari kelas Supplier
      */
-    public Supplier(int id, String name, String email, String phoneNumber, Location location)
+    public Supplier(String name, String email, String phoneNumber, Location location)
     {
-        this.id = id;
+        this.id = DatabaseSupplier.getLastSupplierID() + 1;
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -28,7 +28,7 @@ public class Supplier
     //Menampilkan nomor id supplier
     /**
      * Method getId()
-     * @return id
+     * @return id supplier
      */
     public int getId()
     {
@@ -38,7 +38,7 @@ public class Supplier
     //Menampilkan nama supplier
     /**
      * Method getName()
-     * @return name
+     * @return nama supplier
      */
     public String getName()
     {
@@ -48,7 +48,7 @@ public class Supplier
     //Menampilkan email supplier
     /**
      * Method getEmail()
-     * @return email
+     * @return email supplier
      */
     public String getEmail()
     {
@@ -58,7 +58,7 @@ public class Supplier
     //Menampilkan nomor telepon supplier
     /**
      * Method getPhoneNumber()
-     * @return phoneNumber
+     * @return phoneNumber supplier
      */
     public String getPhoneNumber()
     {
@@ -68,7 +68,7 @@ public class Supplier
     //Menampilkan lokasi supplier
     /**
      * Method getLccation()
-     * @return location
+     * @return lokasi supplier
      */
     public Location getLocation()
     {
@@ -131,6 +131,12 @@ public class Supplier
      */
      public String toString() 
     { 
-       return ""; 
+        System.out.println("==========SUPPLIER==========");
+        System.out.println("ID : " + id);
+        System.out.println("Nama supplier : " + name);
+        System.out.println("Email : " + email);
+        System.out.println("Nomor telepon : " + phoneNumber);
+        System.out.println("Lokasi : " + location.getCity());
+        return ""; 
     }
 }

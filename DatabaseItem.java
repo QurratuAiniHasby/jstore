@@ -1,57 +1,180 @@
-
+import java.util.*;
 /**
  * Kelas yang berisi database informasi list item yang ada di store
  * dan dapat digunakan untuk melakukan penambahan atau penghapusan item
  *
  * @author Qurratu Aini Hasby
- * @version 28/01/2019
+ * @version 11/04/2019
  */
+
+
 public class DatabaseItem
 {
-    //variabel yang digunakan pada kelas ini
-    private String[] listItem;
-    private static Item itemDB;
-    
-    //Penambahan item
+    private static ArrayList<Item> ITEM_DATABASE = new ArrayList<Item>();
+    private static int LAST_ITEM_ID = 0;
+
     /**
-     * Method addItem()
-     * @param item
-     * @return false
+     * Constructor for objects of class DatabaseItem
+     */
+    public DatabaseItem()
+    {
+        // initialise instance variables
+    }
+
+    /**
+     * Method untuk mengembalikan supplier
+     *
+     * @return    objek supplier
+     */
+    public static ArrayList<Item> getItemDatabase()
+    {
+        return ITEM_DATABASE;
+    }
+    
+    /**
+     * Method untuk mengembalikan list supplier
+     *
+     * @return    list supplier
+     */
+    public static int getLastItemID()
+    {
+        return LAST_ITEM_ID;
+    }
+    
+    /**
+     * Method untuk menambahkan item kedalam list
+     *
+     * @return    false
      */
     public static boolean addItem(Item item)
     {
-        itemDB = item;
+        boolean found = false;
+        for(Item temp : ITEM_DATABASE) 
+        {
+          if(temp.getName() == item.getName() && temp.getStatus() == item.getStatus()
+            && temp.getSupplier() == item.getSupplier()) 
+            {
+                return false;
+            }
+        }
+        ITEM_DATABASE.add(item);
+        LAST_ITEM_ID = item.getId();
+        return true;
+    }
+    
+    /**
+     * Method untuk mengembalikan list supplier
+     *
+     * @return    list supplier
+     */
+    public static Item getItemFromID(int id)
+    {
+        for(Item temp : ITEM_DATABASE) 
+        {
+            if(temp.getId() == id) 
+            {
+                return temp;
+            }
+        }
+        return null;
+    }
+    
+    /**
+     * Method untuk mengembalikan list supplier
+     *
+     * @return    list supplier
+     */
+    public static ArrayList<Item> getItemFromSupplier(Supplier supplier)
+    {
+        ArrayList<Item> list = new ArrayList<Item>();
+        boolean found = false;
+        for(Item temp : ITEM_DATABASE) 
+        {
+            if(temp.getSupplier() == supplier) 
+            {
+                list.add(temp);
+                found = true;
+            }
+        }
+        if(found)
+        {
+            return list;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Method untuk mengembalikan list supplier
+     *
+     * @return    list supplier
+     */
+    public static ArrayList<Item> getItemFromCategory(ItemCategory category)
+    {
+        ArrayList<Item> list = new ArrayList<Item>();
+        boolean found = false;
+        for(Item temp : ITEM_DATABASE) 
+        {
+            if(temp.getCategory() == category) 
+            {
+                list.add(temp);
+                found = true;
+            }
+        }
+        if(found)
+        {
+            return list;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Method untuk mengembalikan list supplier
+     *
+     * @return    list supplier
+     */
+    public static ArrayList<Item> getItemFromStatus(ItemStatus status)
+    {
+        ArrayList<Item> list = new ArrayList<Item>();
+        boolean found = false;
+        for(Item temp : ITEM_DATABASE) 
+        {
+            if(temp.getStatus() == status) 
+            {
+                list.add(temp);
+                found = true;
+            }
+        }
+        if(found)
+        {
+            return list;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Method untuk menghapus item dari list
+     *
+     * @return    false
+     */
+    public static boolean removeItem(int id)
+    {
+        for(Item temp : ITEM_DATABASE) 
+        {
+            if(temp.getId() == id) 
+            {
+                ITEM_DATABASE.remove(temp);
+                return true;
+            }
+        }
         return false;
-    }
-    
-    //Penghapusan Item
-    /**
-     * Method removeItem()
-     * @param item
-     * @return false
-     */
-    public static boolean removeItem(Item item)
-    {
-        return false;
-    }
-    
-    //Menampilkan Item
-    /**
-     * Method getItem()
-     * @return itemDB
-     */
-    public static Item getItem()
-    {
-        return itemDB;
-    }
-    
-    //Menampilkan database list item
-    /**
-     * Method getItemDatabase()
-     * @return listItem
-     */
-    public String[] getItemDatabase()
-    {
-        return listItem;
     }
 }

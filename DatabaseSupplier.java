@@ -1,15 +1,15 @@
-
+import java.util.*;
 /**
- * Write a description of class DatabaseSupplier here.
+ * Kelas ini berfungsi untuk informasi database supplier dan menampilkan listnya.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Qurratu Aini Hasby
+ * @version 11/04/2019
  */
+
 public class DatabaseSupplier
 {
-    // instance variables - replace the example below with your own
-    private Supplier[] listSupplier;
-    private Supplier Supplier;
+    private static ArrayList<Supplier> SUPPLIER_DATABASE = new ArrayList<Supplier>();
+    private static int LAST_SUPPLIER_ID = 0;
 
     /**
      * Constructor for objects of class DatabaseSupplier
@@ -18,24 +18,15 @@ public class DatabaseSupplier
     {
         // initialise instance variables
     }
-
-    /**
-     * Method untuk menambahkan supplier kedalam list
-     *
-     * @return    false
-     */
-    public static boolean addSupplier(Supplier Supplier)
-    {
-        return false;
-    }
     
     /**
-     * Method untuk menghapus supplier dari list
+     * Method untuk mengembalikan list supplier
      *
+     * @return    list supplier
      */
-    public void removeSupplier(Supplier Supplier)
+    public static ArrayList<Supplier> getSupplierDatabase()
     {
-        // put your code here
+        return SUPPLIER_DATABASE;
     }
     
     /**
@@ -43,18 +34,68 @@ public class DatabaseSupplier
      *
      * @return    objek supplier
      */
-    public Supplier getSupplier()
+    public static int getLastSupplierID()
     {
-        return Supplier;
+        return LAST_SUPPLIER_ID;
     }
     
     /**
-     * Method untuk mengembalikan list supplier
+     * Method untuk menambahkan supplier kedalam list
      *
-     * @return    list supplier
+     * @return    false
      */
-    public Supplier[] getListSupplier()
+    public static boolean addSupplier(Supplier supplier)
     {
-        return listSupplier;
+        for(Supplier temp : SUPPLIER_DATABASE) 
+        {
+            if((temp.getName() == supplier.getName()) && 
+            (temp.getEmail() == supplier.getEmail()) && 
+            (temp.getPhoneNumber() == supplier.getPhoneNumber())) 
+            {
+                return false;
+            }
+        }
+        SUPPLIER_DATABASE.add(supplier);
+        LAST_SUPPLIER_ID = supplier.getId();
+        return true;
+    }
+    
+    /**
+     * Method untuk mengembalikan supplier
+     *
+     * @return    objek supplier
+     */
+    public static Supplier getSupplier(int id)
+    {
+        for(Supplier temp : SUPPLIER_DATABASE) 
+        {
+            if(temp.getId() == id) 
+            {
+                return temp;
+            }
+        }
+        return null;
+    }
+    
+    /**
+     * Method untuk menghapus supplier dari list
+     *
+     */
+    public static boolean removeSupplier(int id)
+    {
+        for(Supplier temp : SUPPLIER_DATABASE) 
+        {
+            if(temp.getId() == id)
+            {
+                ArrayList<Item> list = DatabaseItem.getItemFromSupplier(temp);
+                for(Item temp1 : list) 
+                {
+                    DatabaseItem.removeItem(temp.getId());
+                }
+                SUPPLIER_DATABASE.remove(temp);
+                return true;
+            }
+        }
+        return false;
     }
 }

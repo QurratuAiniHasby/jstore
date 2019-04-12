@@ -1,39 +1,99 @@
-public class Sell_Paid extends Invoice{
-        private InvoiceType INVOICE_TYPE = InvoiceType.Sell;
-        private InvoiceStatus INVOICE_STATUS = InvoiceStatus.Paid;
-        private static Customer customer;
-        
-        public Sell_Paid(int id, Item item, int totalItem, Customer customer){
-            super(id, item, totalItem);
-            this.customer = customer;
-        }
-        
-        public InvoiceStatus getInvoiceStatus()
-        {
-            return INVOICE_STATUS;
-        }
-        
-        public InvoiceType getInvoiceType()
-        {
-            return INVOICE_TYPE;
-        }
-        
-        public Customer getCustomer()
-        {
-            return customer;
-        }
-        
-        public void setCustomer(Customer customer)
-        {
-            this.customer = customer;
-        }
-        
-        public void setInvoiceStatus(InvoiceStatus status)
+import java.util.*;
+import java.text.*;
+/**
+ * child dari class invoice
+ *
+ * @author Qurratu Aini Hasby
+ * @version 11/04/2019
+ */
+public class Sell_Paid extends Invoice
+{
+   private static InvoiceType INVOICE_TYPE = InvoiceType.Sell;
+    private static InvoiceStatus INVOICE_STATUS = InvoiceStatus.Paid;
+    private Customer customer;
+    private boolean isActive;
+    private SimpleDateFormat dateFormat = new SimpleDateFormat ("dd MMM yyy");
+
+    /**
+     * Constructor for objects of class Sell_Paid
+     */
+    public Sell_Paid(ArrayList<Integer> item, Customer customer)
     {
+        super(item);
+        isActive = false;
+    }
+
+    /**
+     * An 
+     *
+     * @param  
+     * @return
+     */
+    public Customer getCustomer()
+    {
+        return customer;
     }
     
-         public String toString() 
-    { 
-       return ""; 
+    /**
+     * An 
+     *
+     * @param 
+     * @return
+     */
+    @Override
+    public InvoiceStatus getInvoiceStatus()
+    {
+        return INVOICE_STATUS;
+    }
+    
+    /**
+     * An 
+     *
+     * @param  
+     * @return 
+     */
+    @Override
+    public InvoiceType getInvoiceType()
+    {
+        return INVOICE_TYPE;
+    }
+    
+    /**
+     *
+     * @param
+     * @return
+     */
+    public void setCustomer(Customer customer)
+    {
+        this.customer = customer;
+    }
+    
+    /**
+     * 
+     *
+     */    
+    @Override
+    public String toString()
+    {
+        System.out.println("ID = " + super.getId());
+        ArrayList<Integer> listItemID = DatabaseInvoice.getInvoice(super.getId()).getItem();
+        for(int tempID : listItemID)
+        {
+            System.out.println("Item = " + 
+            DatabaseItem.getItemFromID(tempID).getName());
+            System.out.println("Price = " + 
+            DatabaseItem.getItemFromID(tempID).getPrice());
+            System.out.println("Supplier ID = " + 
+            DatabaseItem.getItemFromID(tempID).getSupplier().getId());
+            System.out.println("Supplier name = " + 
+            DatabaseItem.getItemFromID(tempID).getSupplier().getName());
+        }
+        System.out.println("Buy date = " + dateFormat.format(super.getDate().getTime()));
+        System.out.println("Price total = " + super.getTotalPrice());
+        System.out.println("Customer ID = " + customer.getId());
+        System.out.println("Customer name = " + customer.getName());
+        System.out.println("Status = " + this.getInvoiceStatus());
+        System.out.println("Sell success.");
+        return "";
     }
 }

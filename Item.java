@@ -3,7 +3,7 @@
  * Kelas yang digunakan untuk informasi dari Item di Jstore beseta itemnya
  *
  * @author Qurratu Aini Hasby
- * @version 28/01/2019
+ * @version 11/04/2019
  */
 public class Item
 {
@@ -19,9 +19,9 @@ public class Item
     /**
      * Konstruktor dari kelas Item
      */
-    public Item(int id, String name, int stock, int price, ItemCategory category, ItemStatus status, Supplier supplier)
+    public Item(String name, int stock, int price, ItemCategory category, ItemStatus status, Supplier supplier)
     {
-        this.id = id;
+        this.id = DatabaseItem.getLastItemID() + 1;
         this.name = name;
         this.stock = stock;
         this.price = price;
@@ -33,21 +33,21 @@ public class Item
     //Menampilkan nomor id
     /**
      * Method getId()
-     * @return id
+     * @return id item
      */    
     public int getId()
     {
-        return id; //metode untuk mendapatkan nilai id
+        return id;
     }
     
     //Menampilkan nama Item
     /**
      * Method getName()
-     * @return name
+     * @return nama item
      */
     public String getName()
     {
-        return name; //metode untuk mendapatkan nama barang
+        return name;
     }
     
     //Menampilkan stock Item
@@ -57,7 +57,7 @@ public class Item
      */
     public int getStock()
     {
-        return stock; //metode untuk mendapatkan jumlah barang yang ada
+        return stock;
     }
     
     //Menampilkan harga Item
@@ -67,7 +67,7 @@ public class Item
      */
     public int getPrice()
     {
-        return price; //metode untuk mendapatkan harga barang yang dipilih
+        return price;
     }
     
     //Menampilkan kategori Item
@@ -77,7 +77,7 @@ public class Item
      */
     public ItemCategory getCategory()
     {
-        return category; //metode untuk mendapatkan kategori dari suatu barang
+        return category;
     }
     
     //Menampilkan supplier Item
@@ -87,7 +87,7 @@ public class Item
      */
     public Supplier getSupplier()
     {
-        return supplier; //metode untuk mendapatkan nama supplier dari suatu barang
+        return supplier;
     }
     
     /**
@@ -96,7 +96,7 @@ public class Item
      */
     public ItemStatus getStatus()
     {
-        return status; //metode untuk mendapatkan nama supplier dari suatu barang
+        return status;
     }
     //Mengganti nomor id
     /**
@@ -105,7 +105,7 @@ public class Item
      */
     public void setId(int id)
     {
-        this.id = id; //metode untuk menetapkan nilai yang nantinya akan diambil oleh metode get
+        this.id = id;
     }
     
     //Mengganti nama Item
@@ -173,6 +173,14 @@ public class Item
      */
      public String toString() 
     { 
-       return ""; 
+        System.out.println("==========ITEM==========");
+        System.out.println("ID : " + id);
+        System.out.println("Nama item : " + name);
+        System.out.println("Stock : " + stock);
+        System.out.println("Harga : " + price);
+        System.out.println("Kategori : " + category);
+        System.out.println("Status : " + status);
+        System.out.println("Supplier : " + supplier.getName());
+        return ""; 
     }
 }

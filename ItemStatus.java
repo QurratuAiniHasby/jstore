@@ -2,20 +2,22 @@
 /**
  * Enumeration class ItemStatus - write a description of the enum class here
  *
- * @author (your name here)
- * @version (version number or date here)
+ * @author Qurratu Aini Hasby
+ * @version 11/04/2019
  */
 public enum ItemStatus
 {
-    New("new"), Second("second"), Refurbished("refurbished"), Sold("sold");
+   New("new"), Second("second"), Refurbished("refurbished"), Sold("sold");
     
-    String status;
+    private String status;
     
-    ItemStatus(String status){
+    private ItemStatus(String status)
+    {
         this.status = status;
     }
     
-    public String status(){
+    public String toString()
+    {
         return status;
     }
 }

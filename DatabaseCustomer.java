@@ -1,15 +1,16 @@
-
+import java.util.*;
 /**
  * Write a description of class DatabaseCustomer here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Qurratu Aini Hasby
+ * @version 11/04/2019
  */
+
 public class DatabaseCustomer
 {
     // instance variables - replace the example below with your own
-    private Customer[] listCustomer;
-    private Customer Customer;
+    private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<Customer>();
+    private static int LAST_CUSTOMER_ID = 0;
 
     /**
      * Constructor for objects of class DatabaseCustomer
@@ -20,22 +21,13 @@ public class DatabaseCustomer
     }
 
     /**
-     * Method untuk menambahkan supplier kedalam list
+     * Method untuk mengembalikan list supplier
      *
-     * @return    false
+     * @return    list supplier
      */
-    public static boolean addCustomer(Customer Customer)
+    public static ArrayList<Customer> getCustomerDatabase()
     {
-        return false;
-    }
-    
-    /**
-     * Method untuk menghapus supplier dari list
-     *
-     */
-    public void removeCustomer(Customer Customer)
-    {
-        // put your code here
+        return CUSTOMER_DATABASE;
     }
     
     /**
@@ -43,18 +35,67 @@ public class DatabaseCustomer
      *
      * @return    objek supplier
      */
-    public Customer getCustomer()
+    public static int getLastCustomerID()
     {
-        return Customer;
+        return LAST_CUSTOMER_ID;
     }
     
     /**
-     * Method untuk mengembalikan list supplier
+     * An example of a method - replace this comment with your own
      *
-     * @return    list supplier
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
      */
-    public Customer[] getListCustomer()
+    public static boolean addCustomer(Customer customer)
     {
-        return listCustomer;
+        boolean found = false;
+        for(Customer temp : CUSTOMER_DATABASE)
+        {
+            if(temp.getName() == customer.getName() && temp.getEmail() 
+            == customer.getEmail())
+            {
+                return false;
+            }
+        }
+        CUSTOMER_DATABASE.add(customer);
+        LAST_CUSTOMER_ID = customer.getId();
+        return true;
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public static Customer getCustomer(int id)
+    {
+        for(Customer temp : CUSTOMER_DATABASE) 
+        {
+            if(temp.getId() == id) 
+            {
+                return temp;
+            }
+        }
+        return null;
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public static boolean removeCustomer(int id)
+    {
+        for(Customer temp : CUSTOMER_DATABASE) 
+        {
+            if(temp.getId() == id) 
+            {
+                CUSTOMER_DATABASE.remove(temp);
+                return true;
+            }
+        }
+        return false;
     }
 }
