@@ -102,6 +102,7 @@ public class Sell_Unpaid extends Invoice
     @Override
     public String toString()
     {
+        String string="==========INVOICE=======";
         System.out.println("ID = " + super.getId());
         ArrayList<Integer> listItemID = DatabaseInvoice.getInvoice(super.getId()).getItem();
         for(int tempID : listItemID)
@@ -120,7 +121,7 @@ public class Sell_Unpaid extends Invoice
         System.out.println("Customer ID = " + customer.getId());
         System.out.println("Customer name = " + customer.getName());
         System.out.println("Status = " + INVOICE_STATUS);
-        System.out.println("Due date = " + dateFormat.format(dueDate));
+        System.out.println("Due date = " + dateFormat);
         System.out.println(
         "If payment is not received by dueDate, transaction will be cancelled.");
         return "";

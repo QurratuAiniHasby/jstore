@@ -43,18 +43,18 @@ public class DatabaseCustomer
     /**
      * An example of a method - replace this comment with your own
      *
-     * @param  y  a sample parameter for a method
+//     * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public static boolean addCustomer(Customer customer)
+    public static boolean addCustomer(Customer customer)throws CustomerAlreadyExistsException
     {
         boolean found = false;
         for(Customer temp : CUSTOMER_DATABASE)
         {
-            if(temp.getName() == customer.getName() && temp.getEmail() 
+            if(temp.getName() == customer.getName() || temp.getEmail()
             == customer.getEmail())
             {
-                return false;
+                throw new CustomerAlreadyExistsException(customer);
             }
         }
         CUSTOMER_DATABASE.add(customer);
@@ -65,7 +65,7 @@ public class DatabaseCustomer
     /**
      * An example of a method - replace this comment with your own
      *
-     * @param  y  a sample parameter for a method
+//     * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
     public static Customer getCustomer(int id)
@@ -83,10 +83,10 @@ public class DatabaseCustomer
     /**
      * An example of a method - replace this comment with your own
      *
-     * @param  y  a sample parameter for a method
+//     * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public static boolean removeCustomer(int id)
+    public static boolean removeCustomer(int id)throws CustomerNotFoundException
     {
         for(Customer temp : CUSTOMER_DATABASE) 
         {
@@ -96,6 +96,6 @@ public class DatabaseCustomer
                 return true;
             }
         }
-        return false;
+        throw new CustomerNotFoundException(id);
     }
 }

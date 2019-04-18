@@ -10,7 +10,6 @@ public class Item
     //variabel yang digunakan
     private int id;
     private String name;
-    private int stock;
     private int price;
     private static ItemCategory category;
     private static ItemStatus status;
@@ -23,7 +22,6 @@ public class Item
     {
         this.id = DatabaseItem.getLastItemID() + 1;
         this.name = name;
-        this.stock = stock;
         this.price = price;
         this.category = category;
         this.supplier = supplier;
@@ -48,16 +46,6 @@ public class Item
     public String getName()
     {
         return name;
-    }
-    
-    //Menampilkan stock Item
-    /**
-     * Method getStock()
-     * @return stock
-     */
-    public int getStock()
-    {
-        return stock;
     }
     
     //Menampilkan harga Item
@@ -118,16 +106,6 @@ public class Item
         this.name = name;
     }
     
-    //Mengganti stock Item
-    /**
-     * Method setStock()
-     * @param stock
-     */
-    public void setStock(int stock)
-    {
-        this.stock = stock;
-    }
-    
     //Mengganti harga Item
     /**
      * Method setPrice()
@@ -173,14 +151,11 @@ public class Item
      */
      public String toString() 
     { 
-        System.out.println("==========ITEM==========");
-        System.out.println("ID : " + id);
-        System.out.println("Nama item : " + name);
-        System.out.println("Stock : " + stock);
-        System.out.println("Harga : " + price);
-        System.out.println("Kategori : " + category);
-        System.out.println("Status : " + status);
-        System.out.println("Supplier : " + supplier.getName());
-        return ""; 
+        return "===============ITEM==============="
+       + "\nID       : " + getId()
+       + "\nName     : " + getName()
+       + "\nCategory : " + getCategory()
+       + "\nStatus   : " + getStatus()
+       + "\nSupplier : " + supplier.getName() + "\n"; 
     }
 }

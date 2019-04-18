@@ -8,7 +8,7 @@ import java.text.*;
  */
 public class Sell_Paid extends Invoice
 {
-   private static InvoiceType INVOICE_TYPE = InvoiceType.Sell;
+    private static InvoiceType INVOICE_TYPE = InvoiceType.Sell;
     private static InvoiceStatus INVOICE_STATUS = InvoiceStatus.Paid;
     private Customer customer;
     private boolean isActive;
@@ -75,25 +75,24 @@ public class Sell_Paid extends Invoice
     @Override
     public String toString()
     {
-        System.out.println("ID = " + super.getId());
-        ArrayList<Integer> listItemID = DatabaseInvoice.getInvoice(super.getId()).getItem();
-        for(int tempID : listItemID)
+        String string="==========INVOICE=======";
+        string += "\nID ="+getId();
+        string += "\nBuy date =" + getDate();
+        for (Integer invoice : getItem())
         {
-            System.out.println("Item = " + 
-            DatabaseItem.getItemFromID(tempID).getName());
-            System.out.println("Price = " + 
-            DatabaseItem.getItemFromID(tempID).getPrice());
-            System.out.println("Supplier ID = " + 
-            DatabaseItem.getItemFromID(tempID).getSupplier().getId());
-            System.out.println("Supplier name = " + 
-            DatabaseItem.getItemFromID(tempID).getSupplier().getName());
+            Item item = DatabaseItem.getItemFromID(invoice.intValue());
+            string += "\nItem: " + item.getName();
+            string += "\nAmount: " + getItem().size();
+            string += "\nPrice: " + item.getPrice();
+            string += "\nSupplier ID: " + item.getSupplier().getId();
+            string += "\nSupplier Name: " + item.getSupplier().getName();
         }
-        System.out.println("Buy date = " + dateFormat.format(super.getDate().getTime()));
-        System.out.println("Price total = " + super.getTotalPrice());
-        System.out.println("Customer ID = " + customer.getId());
-        System.out.println("Customer name = " + customer.getName());
-        System.out.println("Status = " + this.getInvoiceStatus());
-        System.out.println("Sell success.");
-        return "";
+        return "===============INOVOICE==============="
+       + "\nPrice Total: " + getTotalPrice()
+       + "\nCustomer Name: " + customer
+       + "\nStatus: " + INVOICE_STATUS
+       + "\nSell Success";
+        
+        
     }
 }

@@ -44,15 +44,14 @@ public class DatabaseSupplier
      *
      * @return    false
      */
-    public static boolean addSupplier(Supplier supplier)
+    public static boolean addSupplier(Supplier supplier)throws SupplierAlreadyExistsException
     {
         for(Supplier temp : SUPPLIER_DATABASE) 
         {
-            if((temp.getName() == supplier.getName()) && 
-            (temp.getEmail() == supplier.getEmail()) && 
+            if((temp.getEmail() == supplier.getEmail()) ||
             (temp.getPhoneNumber() == supplier.getPhoneNumber())) 
             {
-                return false;
+                throw new SupplierAlreadyExistsException(supplier);
             }
         }
         SUPPLIER_DATABASE.add(supplier);
@@ -81,7 +80,7 @@ public class DatabaseSupplier
      * Method untuk menghapus supplier dari list
      *
      */
-    public static boolean removeSupplier(int id)
+    public static boolean removeSupplier(int id)throws SupplierNotFoundException, ItemNotFoundException
     {
         for(Supplier temp : SUPPLIER_DATABASE) 
         {
@@ -96,6 +95,6 @@ public class DatabaseSupplier
                 return true;
             }
         }
-        return false;
+        throw new SupplierNotFoundException(id);
     }
 }

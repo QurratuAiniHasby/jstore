@@ -1,23 +1,25 @@
+
+/**
+ * Write a description of class Customer here.
+ *
+ * @author Qurratu Aini
+ * @version 
+ */
+
 import java.util.*;
 import java.text.*;
-import java.util.regex.*;
-    /**
-     * Kelas yang berisi informasi seorang customer.
-     *
-     * @author Qurratu Aini Hasby
-     * @version 11/04/2019
-     */
-    
+import java.util.regex.*;  
+
 public class Customer
 {
-        // instance variables - replace the example below with your own
-        private int id;
-        private String name;
-        private String email;
-        private String username;
-        private String password;
-        private Calendar birthDate;
-        private SimpleDateFormat dateFormat = new SimpleDateFormat ("dd MMM yyy");
+    // instance variables - replace the example below with your own
+    private int id;
+    private String name;
+    private String email;
+    private String username;
+    private String password;
+    private Calendar birthDate;
+    private SimpleDateFormat dateFormat = new SimpleDateFormat ("dd MMM yyy");
 
     /**
      * Constructor for objects of class Customer
@@ -46,57 +48,91 @@ public class Customer
     }
 
     /**
-    * An example of a method - replace this comment with your own
-    *
-    * @param  y  a sample parameter for a method
-    * @return    the sum of x and y
-    */
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
     public String getName()
     {
-        // put your code here
         return name;
     }
     
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
     public String getEmail()
     {
-        // put your code here
-         
         return email;
     }
     
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
     public String getUsername()
     {
-        // put your code here
         return username;
     }
     
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
     public String getPassword()
     {
-        // put your code here
         return password;
     }
     
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
     public int getId()
     {
-        // put your code here
         return id;
     }
     
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
     public Calendar getBirthDate()
     {
         System.out.println("Birth date: " + dateFormat.format(birthDate.getTime()));
         return birthDate;
     }
-    
+       
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
     public void setName(String name)
     {
-        // put your code here
-        this.name=name;
+        this.name = name;
     }
     
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
     public void setEmail(String email)
     {
-        // put your code here
         if(Pattern.matches("^[a-zA-Z0-9_+&*-]+(?:\\."+ 
                             "[a-zA-Z0-9_+&*-]+)*@" + 
                             "(?:[a-zA-Z0-9-]+\\.)+[a-z" + 
@@ -110,17 +146,23 @@ public class Customer
         }
     }
     
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
     public void setUsername(String username)
     {
-         if(Pattern.matches("\\w+[\\_\\.\\&\\*\\~]?\\w+\\@\\w+\\-", email))
-        {
-            this.email = email;
-        }
-        else
-        {
-            this.email = "";
-        }
+        this.username = username;
     }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
     public void setPassword(String password)
     {
         if(Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,}$", password))
@@ -133,27 +175,53 @@ public class Customer
         }
     }
     
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
     public void setId(int id)
     {
-        // put your code here
-        this.id=id;
+        this.id = id;
     }
     
-    public void setBirthDate(Calendar birthDate)
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public void setBirthdate(Calendar birthdDate)
     {
-        // put your code here
-        this.birthDate=birthDate;
+        //this.birthDate = birthDate;
     }
     
-    public void setBirthDate(int year, int month, int dayOfMonth)
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public void setBirthdate(int year, int month, int dayOfMonth)
     {
-        // put your code here
-        
+        birthDate = new GregorianCalendar(year, (month-1), dayOfMonth);
     }
     
-   public String toString()
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public String toString()
     {
-        // put your code here
-       return name + "" + email + "" + username + "" + password + "" + id + "" + birthDate + "";
+        System.out.println("Name: " + name);
+        System.out.println("Email: " + email);
+        System.out.println("Username: " + username);
+        System.out.println("Password: " + password);
+        System.out.println("ID: " + id);
+        System.out.println("Birthdate: " + birthDate);
+        return "";
     }
 }

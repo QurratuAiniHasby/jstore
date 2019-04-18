@@ -46,15 +46,16 @@ public class DatabaseItem
      *
      * @return    false
      */
-    public static boolean addItem(Item item)
+    public static boolean addItem(Item item)throws ItemAlreadyExistsException
     {
-        boolean found = false;
-        for(Item temp : ITEM_DATABASE) 
+        for(Item temp : ITEM_DATABASE)
         {
-          if(temp.getName() == item.getName() && temp.getStatus() == item.getStatus()
-            && temp.getSupplier() == item.getSupplier()) 
+            if(temp.getName() == item.getName() &&
+                    temp.getStatus() == item.getStatus()
+                    && temp.getSupplier() == item.getSupplier() &&
+                    temp.getCategory() == item.getCategory())
             {
-                return false;
+                throw new ItemAlreadyExistsException(item);
             }
         }
         ITEM_DATABASE.add(item);
@@ -165,7 +166,7 @@ public class DatabaseItem
      *
      * @return    false
      */
-    public static boolean removeItem(int id)
+    public static boolean removeItem(int id)throws ItemNotFoundException
     {
         for(Item temp : ITEM_DATABASE) 
         {
@@ -175,6 +176,6 @@ public class DatabaseItem
                 return true;
             }
         }
-        return false;
+        throw new ItemNotFoundException(id);
     }
 }
