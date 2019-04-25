@@ -27,13 +27,12 @@ public class JStore
      */
     public static void main(String[] args)
     {
-        SpringApplication.run(JStore.class, args);
 
-        /**Location lokasi = new Location("Bekasi", "JABAR", "Home");
+        Location lokasi = new Location("Bekasi", "JABAR", "Home");
 
         try
         {
-            DatabaseSupplier.addSupplier(new Supplier("Dila", "dila@gmail.com",
+            DatabaseSupplier.addSupplier(new Supplier("Dhea", "dhea@gmail.com",
                     "081208921453", lokasi));
         }
         catch (SupplierAlreadyExistsException a)
@@ -62,12 +61,12 @@ public class JStore
         /**for(Supplier data : DatabaseSupplier.getSupplierDatabase())
         {
             data.toString();
-        }
+        }*/
 
         try
         {
-            DatabaseCustomer.addCustomer(new Customer("erna", "erna@gmail.com",
-                    "erna", "ern4cAn", 1998, 4, 10));
+            DatabaseCustomer.addCustomer(new Customer("haha", "haha@gmail.com",
+                    "hahai", "h4h4cAn", 1998, 4, 10));
         }
         catch (CustomerAlreadyExistsException a)
         {
@@ -90,12 +89,12 @@ public class JStore
         catch (CustomerAlreadyExistsException a)
         {
             System.out.println(a.getMessage());
-        }*/
+        }
 
         /**for(Customer data : DatabaseCustomer.getCustomerDatabase())
         {
             data.toString();
-        }
+        }*/
 
         try
         {
@@ -123,12 +122,12 @@ public class JStore
         catch (ItemAlreadyExistsException a)
         {
             System.out.println(a.getMessage());
-        }*/
+        }
 
         /**for(Item data : DatabaseItem.getItemDatabase())
         {
             data.toString();
-        }
+        }*/
 
         ArrayList<Integer> item = new ArrayList<Integer>();
         item.add(DatabaseItem.getItemFromID(1).getId());
@@ -152,6 +151,8 @@ public class JStore
         catch (InvoiceAlreadyExistsException a)
         {
             System.out.println(a.getMessage());
-        }*/
+        }
+
+        SpringApplication.run(JStore.class, args);
     }
 }
