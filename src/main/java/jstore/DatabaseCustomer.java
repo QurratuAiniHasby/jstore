@@ -1,100 +1,83 @@
 package jstore;
-import java.util.*;
 /**
  * Write a description of class DatabaseCustomer here.
  *
- * @author Qurratu Aini Hasby
- * @version 11/04/2019
+ * @author (your name)
+ * @version (a version number or a date)
  */
+import java.util.ArrayList;
 
 public class DatabaseCustomer
 {
     // instance variables - replace the example below with your own
-    private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<Customer>();
-    private static int LAST_CUSTOMER_ID = 0;
+    private final static ArrayList<Customer> CUSTOMER_DATABASE=new ArrayList<>();
+    private static int LAST_CUSTOMER_ID=0;
 
     /**
-     * Constructor for objects of class DatabaseCustomer
-     */
-    public DatabaseCustomer()
-    {
-        // initialise instance variables
-    }
-
-    /**
-     * Method untuk mengembalikan list supplier
+     * An example of a method - replace this comment with your own
      *
-     * @return    list supplier
      */
     public static ArrayList<Customer> getCustomerDatabase()
     {
         return CUSTOMER_DATABASE;
     }
     
-    /**
-     * Method untuk mengembalikan supplier
-     *
-     * @return    objek supplier
-     */
     public static int getLastCustomerID()
     {
         return LAST_CUSTOMER_ID;
     }
     
-    /**
-     * An example of a method - replace this comment with your own
-     *
-//     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public static boolean addCustomer(Customer customer)throws CustomerAlreadyExistsException
+    public static boolean addCustomer(Customer customer) throws CustomerAlreadyExistsException
     {
-        boolean found = false;
-        for(Customer temp : CUSTOMER_DATABASE)
+        // put your code here
+        boolean success = true;
+        for(Customer object : CUSTOMER_DATABASE)
         {
-            if(temp.getName() == customer.getName() || temp.getEmail()
-            == customer.getEmail())
+            if(object.getUsername().equals(customer.getUsername()) || object.getEmail().equals(customer.getEmail()))
             {
-                throw new CustomerAlreadyExistsException(customer);
+                throw new CustomerAlreadyExistsException(object);
+            }
+            else
+            {
+                success = true;
             }
         }
-        CUSTOMER_DATABASE.add(customer);
-        LAST_CUSTOMER_ID = customer.getId();
-        return true;
+        if (success)
+        {
+            CUSTOMER_DATABASE.add(customer);
+            LAST_CUSTOMER_ID = customer.getId();
+        }
+        return success;
     }
     
-    /**
-     * An example of a method - replace this comment with your own
-     *
-//     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
     public static Customer getCustomer(int id)
     {
-        for(Customer temp : CUSTOMER_DATABASE) 
+        Customer value = null;
+        for(Customer object : CUSTOMER_DATABASE)
         {
-            if(temp.getId() == id) 
+            if(object.getId() == id)
             {
-                return temp;
+                value = object;
+                break;
             }
         }
-        return null;
+        return value;
     }
     
-    /**
-     * An example of a method - replace this comment with your own
-     *
-//     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public static boolean removeCustomer(int id)throws CustomerNotFoundException
+    public static boolean removeCustomer(int id) throws CustomerNotFoundException
     {
-        for(Customer temp : CUSTOMER_DATABASE) 
+        Customer value = null;
+        int index;
+        boolean success = false;
+        for(Customer object : CUSTOMER_DATABASE)
         {
-            if(temp.getId() == id) 
+            if(object.getId() == id)
             {
-                CUSTOMER_DATABASE.remove(temp);
-                return true;
+                value = object;
+                index = CUSTOMER_DATABASE.indexOf(value);
+                CUSTOMER_DATABASE.remove(index);
+                success = true;
+                break;
             }
         }
         throw new CustomerNotFoundException(id);
@@ -102,13 +85,15 @@ public class DatabaseCustomer
 
     public static Customer getCustomerLogin(String email, String password)
     {
-        for(Customer temp : CUSTOMER_DATABASE) 
+        Customer value = null;
+        for(Customer object : CUSTOMER_DATABASE)
         {
-            if(temp.getEmail() == email && temp.getPassword() == password) 
+            if(object.getEmail() == email && object.getPassword() == password)
             {
-                return temp;
+                value = object;
+                break;
             }
         }
-        return null;
+        return value;
     }
 }

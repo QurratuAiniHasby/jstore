@@ -1,99 +1,83 @@
 package jstore;
-import java.util.*;
-import java.text.*;
 /**
- * child dari class invoice
+ * Write a description of class Sell_Paid here.
  *
- * @author Qurratu Aini Hasby
- * @version 11/04/2019
+ * @author (your name)
+ * @version (a version number or a date)
  */
+import java.util.*;
+import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+
 public class Sell_Paid extends Invoice
 {
-    private static InvoiceType INVOICE_TYPE = InvoiceType.Sell;
-    private static InvoiceStatus INVOICE_STATUS = InvoiceStatus.Paid;
+    // instance variables - replace the example below with your own
+    private static InvoiceType INVOICE_TYPE=InvoiceType.Sell;
+    private static InvoiceStatus INVOICE_STATUS=InvoiceStatus.Paid;
     private Customer customer;
-    private boolean isActive;
-    private SimpleDateFormat dateFormat = new SimpleDateFormat ("dd MMM yyy");
+//    private boolean isActive;
 
     /**
      * Constructor for objects of class Sell_Paid
      */
     public Sell_Paid(ArrayList<Integer> item, Customer customer)
     {
+        // initialise instance variables
         super(item);
-        isActive = false;
+        this.customer=customer;
+        super.setIsActive(false);
+        int total = 0;
+        for(int id : item){
+            Item temp = DatabaseItem.getItemFromID(id);
+            int priceTemp = temp.getPrice();
+            total += priceTemp;
+        }
+        super.totalPrice = total;
     }
 
     /**
-     * An 
+     * An example of a method - replace this comment with your own
      *
-     * @param  
-     * @return
+     * @return    the sum of x and y
      */
     public Customer getCustomer()
     {
         return customer;
     }
     
-    /**
-     * An 
-     *
-     * @param 
-     * @return
-     */
-    @Override
     public InvoiceStatus getInvoiceStatus()
     {
+        // put your code here
         return INVOICE_STATUS;
     }
     
-    /**
-     * An 
-     *
-     * @param  
-     * @return 
-     */
-    @Override
     public InvoiceType getInvoiceType()
     {
         return INVOICE_TYPE;
     }
     
-    /**
-     *
-     * @param
-     * @return
-     */
     public void setCustomer(Customer customer)
     {
-        this.customer = customer;
+        this.customer=customer;
     }
     
-    /**
-     * 
-     *
-     */    
-    @Override
     public String toString()
     {
-        String string="==========INVOICE=======";
-        string += "\nID ="+getId();
-        string += "\nBuy date =" + getDate();
-        for (Integer invoice : getItem())
-        {
-            Item item = DatabaseItem.getItemFromID(invoice.intValue());
-            string += "\nItem: " + item.getName();
-            string += "\nAmount: " + getItem().size();
-            string += "\nPrice: " + item.getPrice();
-            string += "\nSupplier ID: " + item.getSupplier().getId();
-            string += "\nSupplier Name: " + item.getSupplier().getName();
+        StringBuilder total = new StringBuilder();
+        total.append("===============INVOICE===============\n");
+        for(int i : item){
+            Item temp = DatabaseItem.getItemFromID(i);
+            String stringTemp = null;
+            if (temp != null) {
+                stringTemp = temp.toString();
+                total.append(stringTemp);
+            }
+            total.append("\n");
         }
-        return "===============INOVOICE==============="
-       + "\nPrice Total: " + getTotalPrice()
-       + "\nCustomer Name: " + customer
-       + "\nStatus: " + INVOICE_STATUS
-       + "\nSell Success";
-        
-        
+//        total.append("\nCustomer: ").append(customer.getName());
+//        int price = this.getTotalPrice();
+//        total.append("\nTotal price = ").append(price);
+//        total.append("\n"+this.isActive());
+        return total.toString();
     }
 }

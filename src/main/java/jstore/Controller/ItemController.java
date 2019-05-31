@@ -1,32 +1,24 @@
-package jstore.Controller;
+package jstore.controller;
 
-import jstore.*;
-import org.springframework.web.bind.annotation.*;
+import jstore.DatabaseItem;
+import jstore.Item;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.*;
+import java.util.ArrayList;
 
 @RestController
 public class ItemController {
 
-      /*@RequestMapping("/")
-      public String indexPage(@RequestParam(value="name", defaultValue="world") String name) {
-         return "Hello " + name;
-    }*/
-
-    @RequestMapping(value = "/itemlist", method= RequestMethod.GET)
-    public ArrayList<Item> itemsList()/*(@RequestParam(value="name") String name,
-                         @RequestParam(value="email") String email,
-                         //@RequestParam(value="username") String username,
-                         @RequestParam(value="password") String password
-    )*/
-    {
-        ArrayList<Item> tempDatabaseItem = DatabaseItem.getItemDatabase();
-        return tempDatabaseItem;
+    @RequestMapping(value = "/items", method= RequestMethod.GET)
+    public ArrayList<Item> itemList(){
+        return DatabaseItem.getItemDatabase();
     }
 
-    @RequestMapping(value = "/getitem/{id_item}", method = RequestMethod.GET)
-    public Item getItemFromID(@PathVariable int id) {
-        Item item = DatabaseItem.getItemFromID(id);
-        return item;
+    @RequestMapping(value = "/items/{id_item}", method = RequestMethod.GET)
+    public Item getItemFromID(@PathVariable int id_item) {
+        return DatabaseItem.getItemFromID(id_item);
     }
 }

@@ -1,161 +1,142 @@
 package jstore;
 /**
- * Kelas yang digunakan untuk informasi dari Item di Jstore beseta itemnya
- *
- * @author Qurratu Aini Hasby
- * @version 11/04/2019
+ * Ini adalah kelas Item. Kelas ini digunakan untuk mendata
+ * barang dan hal-hal yang bersangkutan dengannya.
+ * @author (Muhammad Haqy Aunoora)
+ * @version (28 Februari 2019)
  */
 public class Item
 {
-    //variabel yang digunakan
+    // instance variables - replace the example below with your own
     private int id;
     private String name;
     private int price;
-    private static ItemCategory category;
-    private static ItemStatus status;
-    private static Supplier supplier;
-        
+    private ItemCategory category;
+    private ItemStatus status;
+    private Supplier supplier;
+
     /**
-     * Konstruktor dari kelas Item
+     * Konstruktor untuk objek dari kelas Item
      */
-    public Item(String name, int stock, int price, ItemCategory category, ItemStatus status, Supplier supplier)
+    public Item(String name, ItemStatus status, int price, Supplier supplier, ItemCategory category)
     {
-        this.id = DatabaseItem.getLastItemID() + 1;
-        this.name = name;
-        this.price = price;
-        this.category = category;
-        this.supplier = supplier;
-        this.status = status;
+        // initialise instance variables
+        this.id=DatabaseItem.getLastItemID()+1;
+        this.name=name;
+        this.status=status;
+        this.price=price;
+        this.supplier=supplier;
+        this.category=category;
     }
 
-    //Menampilkan nomor id
     /**
-     * Method getId()
-     * @return id item
-     */    
+     * Method getter untuk mengambil data
+     *
+     * @return    id
+     */
     public int getId()
     {
+        // put your code here
         return id;
     }
     
-    //Menampilkan nama Item
     /**
-     * Method getName()
-     * @return nama item
+     * Method getter untuk mengambil data
+     *
+     * @return    name
      */
     public String getName()
     {
-        return name;
+        return this.name;
     }
-    
-    //Menampilkan harga Item
+
     /**
-     * Method getPrice()
-     * @return price
+     * Method getter untuk mengambil data
+     *
+     * @return    price
      */
     public int getPrice()
     {
-        return price;
+        return this.price;
     }
     
-    //Menampilkan kategori Item
     /**
-     * Method getCategory()
-     * @return category
+     * Method getter untuk mengambil data
+     *
+     * @return    category
      */
     public ItemCategory getCategory()
     {
-        return category;
+        return this.category;
     }
     
-    //Menampilkan supplier Item
     /**
-     * Method getSupplier()
-     * @return supplier
+     * Method getter untuk mengambil data
+     *
+     * @return    supplier
      */
     public Supplier getSupplier()
     {
-        return supplier;
+        return this.supplier;
+    }
+    
+    public ItemStatus getStatus()
+    {
+        return this.status;
     }
     
     /**
-     * Method getStatus()
-     * @return status
-     */
-    public ItemStatus getStatus()
-    {
-        return status;
-    }
-    //Mengganti nomor id
-    /**
-     * Method setId()
-     * @param id
+     * Method setter untuk menentukan data
+     *
+     * @param id 
      */
     public void setId(int id)
     {
         this.id = id;
     }
     
-    //Mengganti nama Item
     /**
-     * Method setName()
-     * @param name
+     * Method setter untuk menentukan data
+     *
+     * @param name 
      */
     public void setName(String name)
     {
         this.name = name;
     }
     
-    //Mengganti harga Item
     /**
-     * Method setPrice()
-     * @param price
+     * Method setter untuk menentukan data
+     *
+     * @param price 
      */
     public void setPrice(int price)
     {
         this.price = price;
     }
     
-    //Mengganti kategori Item
     /**
-     * Method setCategory()
-     * @param category
+     * Method setter untuk menentukan data
+     *
+     * @param category 
      */
     public void setCategory(ItemCategory category)
     {
         this.category = category;
     }
     
-    //Mengganti supplier Item
-    /**
-     * Method setSupplier()
-     * @param supplier
-     */
-    public void setSupplier(Supplier supplier)
-    {
-        this.supplier = supplier;
-    }
-    
-    /**
-     * Method setStatus()
-     * @param status
-     */
     public void setStatus(ItemStatus status)
     {
         this.status = status;
     }
     
-    //Mencetak nama Item
-    /**
-     * Method printData()
-     */
-     public String toString() 
-    { 
-        return "===============ITEM==============="
-       + "\nID       : " + getId()
-       + "\nName     : " + getName()
-       + "\nCategory : " + getCategory()
-       + "\nStatus   : " + getStatus()
-       + "\nSupplier : " + supplier.getName() + "\n"; 
+    public void setSupplier(Supplier supplier)
+    {
+        this.supplier = supplier;
+    }
+    
+    public String toString()
+    {
+        return "ID: " +id+ "\nName: " +name+ "\nPrice: " +price+ "\nCategory: " +category+ "\nStatus: " +status+ "\nSupplier: " +supplier;
     }
 }

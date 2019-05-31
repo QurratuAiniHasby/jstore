@@ -1,24 +1,15 @@
 package jstore;
-/**
- * Write a description of class ItemNotFoundException here.
- *
- * @author Qurratu Aini Hasby
- * @version 18/4/2019
- */
-public class ItemNotFoundException extends Exception
-{
-    // instance variables - replace the example below with your own
+public class ItemNotFoundException extends Exception{
     private int item_error;
 
-
-    public ItemNotFoundException(int item_input){
+    public ItemNotFoundException(int item_input)
+    {
         super("Item ID: ");
-        this.item_error= item_input;
-        getMessage();
-
+        item_error = item_input;
     }
 
-    public String getMessage(){
-     return super.getMessage() + item_error + " not found.";
+    public String getExMessage()
+    {
+        return super.getMessage() + item_error + " not found.";
     }
 }

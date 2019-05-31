@@ -1,180 +1,131 @@
 package jstore;
-import java.util.*;
 /**
- * Kelas yang berisi database informasi list item yang ada di store
- * dan dapat digunakan untuk melakukan penambahan atau penghapusan item
- *
- * @author Qurratu Aini Hasby
- * @version 11/04/2019
+ * Ini adalah kelas DatabaseItem. Kelas ini digunakan untuk
+ * database kelas Item.
+ * @author (Muhammad Haqy Aunoora)
+ * @version (28 Februari 2019)
  */
-
+import java.util.ArrayList;
 
 public class DatabaseItem
 {
-    private static ArrayList<Item> ITEM_DATABASE = new ArrayList<Item>();
-    private static int LAST_ITEM_ID = 0;
+    // instance variables - replace the example below with your own
+    private final static ArrayList<Item> ITEM_DATABASE=new ArrayList<>();
+    private static int LAST_ITEM_ID=0;
 
     /**
-     * Constructor for objects of class DatabaseItem
-     */
-    public DatabaseItem()
-    {
-        // initialise instance variables
-    }
-
-    /**
-     * Method untuk mengembalikan supplier
+     * Method untuk menambah data item
      *
-     * @return    objek supplier
+     * @return    true
      */
     public static ArrayList<Item> getItemDatabase()
     {
         return ITEM_DATABASE;
     }
     
-    /**
-     * Method untuk mengembalikan list supplier
-     *
-     * @return    list supplier
-     */
     public static int getLastItemID()
     {
         return LAST_ITEM_ID;
     }
     
-    /**
-     * Method untuk menambahkan item kedalam list
-     *
-     * @return    false
-     */
-    public static boolean addItem(Item item)throws ItemAlreadyExistsException
+    public static boolean addItem(Item item) throws ItemAlreadyExistsException
     {
-        for(Item temp : ITEM_DATABASE)
+        // put your code here
+        boolean success = true;
+        for(Item object : ITEM_DATABASE)
         {
-            if(temp.getName() == item.getName() &&
-                    temp.getStatus() == item.getStatus()
-                    && temp.getSupplier() == item.getSupplier() &&
-                    temp.getCategory() == item.getCategory())
+            if(object.getName().equals(item.getName()) && object.getStatus().equals(item.getStatus()) && object.getSupplier().equals(item.getSupplier()) && object.getCategory().equals(item.getCategory()))
             {
-                throw new ItemAlreadyExistsException(item);
+                throw new ItemAlreadyExistsException(object);
+            }
+            else
+            {
+                success = true;
             }
         }
-        ITEM_DATABASE.add(item);
-        LAST_ITEM_ID = item.getId();
-        return true;
+        if (success)
+        {
+            ITEM_DATABASE.add(item);
+            LAST_ITEM_ID = item.getId();
+        }
+        return success;
     }
     
-    /**
-     * Method untuk mengembalikan list supplier
-     *
-     * @return    list supplier
-     */
     public static Item getItemFromID(int id)
     {
-        for(Item temp : ITEM_DATABASE) 
+        Item value = null;
+        for(Item object : ITEM_DATABASE)
         {
-            if(temp.getId() == id) 
+            if(object.getId() == id)
             {
-                return temp;
+                value = object;
+                break;
             }
         }
-        return null;
+        return value;
     }
     
-    /**
-     * Method untuk mengembalikan list supplier
-     *
-     * @return    list supplier
-     */
     public static ArrayList<Item> getItemFromSupplier(Supplier supplier)
     {
-        ArrayList<Item> list = new ArrayList<Item>();
-        boolean found = false;
-        for(Item temp : ITEM_DATABASE) 
+        ArrayList<Item> value = new ArrayList<>();
+        for(Item object : ITEM_DATABASE)
         {
-            if(temp.getSupplier() == supplier) 
+            if(object.getSupplier() == supplier)
             {
-                list.add(temp);
-                found = true;
+                value.add(object);
+                break;
             }
         }
-        if(found)
-        {
-            return list;
-        }
-        else
-        {
-            return null;
-        }
+        return value;
     }
     
-    /**
-     * Method untuk mengembalikan list supplier
-     *
-     * @return    list supplier
-     */
     public static ArrayList<Item> getItemFromCategory(ItemCategory category)
     {
-        ArrayList<Item> list = new ArrayList<Item>();
-        boolean found = false;
-        for(Item temp : ITEM_DATABASE) 
+        ArrayList<Item> value = new ArrayList<>();
+        for(Item object : ITEM_DATABASE)
         {
-            if(temp.getCategory() == category) 
+            if(object.getCategory() == category)
             {
-                list.add(temp);
-                found = true;
+                value.add(object);
+                break;
             }
         }
-        if(found)
-        {
-            return list;
-        }
-        else
-        {
-            return null;
-        }
+        return value;
     }
     
-    /**
-     * Method untuk mengembalikan list supplier
-     *
-     * @return    list supplier
-     */
     public static ArrayList<Item> getItemFromStatus(ItemStatus status)
     {
-        ArrayList<Item> list = new ArrayList<Item>();
-        boolean found = false;
-        for(Item temp : ITEM_DATABASE) 
+        ArrayList<Item> value = new ArrayList<>();
+        for(Item object : ITEM_DATABASE)
         {
-            if(temp.getStatus() == status) 
+            if(object.getStatus() == status)
             {
-                list.add(temp);
-                found = true;
+                value.add(object);
+                break;
             }
         }
-        if(found)
-        {
-            return list;
-        }
-        else
-        {
-            return null;
-        }
+        return value;
     }
     
     /**
-     * Method untuk menghapus item dari list
+     * Method untuk menghapus data item
      *
-     * @return    false
+     * @return    true
      */
-    public static boolean removeItem(int id)throws ItemNotFoundException
+    public static boolean removeItem(int id) throws ItemNotFoundException
     {
-        for(Item temp : ITEM_DATABASE) 
+        Item value = null;
+        int index;
+        boolean success = false;
+        for(Item object : ITEM_DATABASE)
         {
-            if(temp.getId() == id) 
+            if(object.getId() == id)
             {
-                ITEM_DATABASE.remove(temp);
-                return true;
+                value = object;
+                index = ITEM_DATABASE.indexOf(value);
+                ITEM_DATABASE.remove(index);
+                success = true;
+                break;
             }
         }
         throw new ItemNotFoundException(id);

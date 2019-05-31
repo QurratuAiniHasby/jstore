@@ -2,22 +2,21 @@ package jstore;
 /**
  * Enumeration class ItemStatus - write a description of the enum class here
  *
- * @author Qurratu Aini Hasby
- * @version 11/04/2019
+ * @author (your name here)
+ * @version (version number or date here)
  */
 public enum ItemStatus
 {
-   New("new"), Second("second"), Refurbished("refurbished"), Sold("sold");
+    New("New"), Second("Second"), Refurbished("Refurbished"), Sold("Sold");
+   
+    private String strItemStatus;
     
-    private String status;
-    
-    private ItemStatus(String status)
+    private ItemStatus(String strItemStatus)
     {
-        this.status = status;
+        this.strItemStatus=strItemStatus;
     }
     
-    public String toString()
-    {
-        return status;
+    public String toString(){
+        return strItemStatus;
     }
 }

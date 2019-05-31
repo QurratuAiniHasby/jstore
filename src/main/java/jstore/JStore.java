@@ -1,158 +1,75 @@
 package jstore;
-import java.util.*;
 /**
  * Write a description of class JStore here.
  *
- * @author Qurratu Aini Hasby
- * @version 18/4/2019
+ * @author (your name)
+ * @version (a version number or a date)
  */
+import java.util.ArrayList;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-@SpringBootApplication
 
+@SpringBootApplication
 public class JStore
 {
     // instance variables - replace the example below with your own
+    
 
     /**
      * Constructor for objects of class JStore
      */
-    public JStore()
-    {
-        // initialise instance variables
-    }
-
-    /**
-     * Fungsi utama yang akan dijalankan
-     */
     public static void main(String[] args)
     {
+        Location loc = new Location("Depok", "Jawa Barat", "Kota");
 
-        Location lokasi = new Location("Bekasi", "JABAR", "Home");
-
-        try
-        {
-            DatabaseSupplier.addSupplier(new Supplier("Dhea", "dhea@gmail.com",
-                    "081208921453", lokasi));
+        try {
+            DatabaseSupplier.addSupplier(new Supplier("Alwi", "alwi@gmail.com", "02184305768", loc));
+        } catch (SupplierAlreadyExistsException e) {
+            System.out.println(e.getExMessage());
         }
-        catch (SupplierAlreadyExistsException a)
-        {
-            System.out.println(a.getMessage());
+//        try {
+//            DatabaseSupplier.addSupplier(new Supplier("Udin", "udin@email.com", "02184309876", loc));
+//        } catch (SupplierAlreadyExistsException e) {
+//            System.out.println(e.getExMessage());
+//        }
+//        try {
+//            DatabaseSupplier.addSupplier(new Supplier("Meidi", "Meidi@email.com", "02184301234", loc));
+//        } catch (SupplierAlreadyExistsException e) {
+//            System.out.println(e.getExMessage());
+//        }
+//
+        try {
+            DatabaseItem.addItem(new Item("LED Strip", ItemStatus.New, 100000, DatabaseSupplier.getSupplier(1), ItemCategory.Electronics));
+        } catch (ItemAlreadyExistsException e) {
+            System.out.println(e.getExMessage());
         }
-        try
-        {
-            DatabaseSupplier.addSupplier(new Supplier("Dila", "dila@gmail.com",
-                    "081208921453", lokasi));
+        try {
+            DatabaseItem.addItem(new Item("Desk", ItemStatus.Refurbished, 1000000, DatabaseSupplier.getSupplier(1), ItemCategory.Furniture));
+        } catch (ItemAlreadyExistsException e) {
+            System.out.println(e.getExMessage());
         }
-        catch (SupplierAlreadyExistsException a)
-        {
-            System.out.println(a.getMessage());
+        try {
+            DatabaseItem.addItem(new Item("Calculator", ItemStatus.Second, 400000, DatabaseSupplier.getSupplier(1), ItemCategory.Stationery));
+        } catch (ItemAlreadyExistsException e) {
+            System.out.println(e.getExMessage());
         }
-        try
-        {
-            DatabaseSupplier.addSupplier(new Supplier("Aldin", "aldin@gmail.com",
-                    "081280921843", lokasi));
-        }
-        catch (SupplierAlreadyExistsException a)
-        {
-            System.out.println(a.getMessage());
-        }
-
-        /**for(Supplier data : DatabaseSupplier.getSupplierDatabase())
-        {
-            data.toString();
-        }*/
-
-        try
-        {
-            DatabaseCustomer.addCustomer(new Customer("haha", "haha@gmail.com",
-                    "hahai", "h4h4cAn", 1998, 4, 10));
-        }
-        catch (CustomerAlreadyExistsException a)
-        {
-            System.out.println(a.getMessage());
-        }
-        try
-        {
-            DatabaseCustomer.addCustomer(new Customer("erna", "erna@gmail.com",
-                    "erna", "ern4cAn", 1998, 4, 10));
-        }
-        catch (CustomerAlreadyExistsException a)
-        {
-            System.out.println(a.getMessage());
-        }
-        try
-        {
-            DatabaseCustomer.addCustomer(new Customer("tina", "tina@yahoo.com",
-                    "tina", "t1nAcAn", 1998, 4, 10));
-        }
-        catch (CustomerAlreadyExistsException a)
-        {
-            System.out.println(a.getMessage());
-        }
-
-        /**for(Customer data : DatabaseCustomer.getCustomerDatabase())
-        {
-            data.toString();
-        }*/
-
-        try
-        {
-            DatabaseItem.addItem(new Item("hp", 10, 50000,
-                    ItemCategory.Electronics, ItemStatus.New, DatabaseSupplier.getSupplier(1)));
-        }
-        catch (ItemAlreadyExistsException a)
-        {
-            System.out.println(a.getMessage());
-        }
-        try
-        {
-            DatabaseItem.addItem(new Item("toshiba", 12, 40000,
-                    ItemCategory.Electronics, ItemStatus.New, DatabaseSupplier.getSupplier(2)));
-        }
-        catch (ItemAlreadyExistsException a)
-        {
-            System.out.println(a.getMessage());
-        }
-        try
-        {
-            DatabaseItem.addItem(new Item("lenovo", 15, 70000,
-                    ItemCategory.Electronics, ItemStatus.New, DatabaseSupplier.getSupplier(3)));
-        }
-        catch (ItemAlreadyExistsException a)
-        {
-            System.out.println(a.getMessage());
-        }
-
-        /**for(Item data : DatabaseItem.getItemDatabase())
-        {
-            data.toString();
-        }*/
-
-        ArrayList<Integer> item = new ArrayList<Integer>();
-        item.add(DatabaseItem.getItemFromID(1).getId());
-        item.add(DatabaseItem.getItemFromID(2).getId());
-        try
-        {
-            DatabaseInvoice.addInvoice(new Sell_Installment(item,5, DatabaseCustomer.getCustomer(1)));
-        }
-        catch (InvoiceAlreadyExistsException a)
-        {
-            System.out.println(a.getMessage());
-        }
-
-        ArrayList<Integer> item2 = new ArrayList<Integer>();
-        item2.add(DatabaseItem.getItemFromID(1).getId());
-        item2.add(DatabaseItem.getItemFromID(3).getId());
-        try
-        {
-            DatabaseInvoice.addInvoice(new Sell_Unpaid(item2, DatabaseCustomer.getCustomer(2)));
-        }
-        catch (InvoiceAlreadyExistsException a)
-        {
-            System.out.println(a.getMessage());
-        }
+//        try {
+//            DatabaseItem.addItem(new Item("Resistor", ItemStatus.Sold, 1000, DatabaseSupplier.getSupplier(1), ItemCategory.Electronics));
+//        } catch (ItemAlreadyExistsException e) {
+//            System.out.println(e.getExMessage());
+//        }
 
         SpringApplication.run(JStore.class, args);
     }
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     *    the sum of x and y
+     */
+    public JStore()
+    {
+        // put your code here
+        
+    }
+   
 }

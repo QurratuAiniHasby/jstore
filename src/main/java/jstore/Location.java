@@ -1,60 +1,63 @@
 package jstore;
 /**
- * Kelas yang digunakan untuk informasi lokasi dari supplier
- *
- * @Qurratu Aini Hasby
- * @version 11/04/2019
+ * Ini adalah kelas Location. Kelas ini digunakan untuk mendata
+ * lokasi yang ada supplier dan hal-hal yang bersangkutan
+ * dengannya.
+ * @author (Muhammad Haqy Aunoora)
+ * @version (28 Februari 2019)
  */
 public class Location
 {
-    //variabel yang digunakan
+    // instance variables - replace the example below with your own
     private String province;
     private String description;
     private String city;
 
     /**
-     * Konstruktor dari kelas Supplier
+     * Konstruktor untuk objek dari kelas Supplier
      */
-    public Location(String province, String description, String city)
+    public Location(String city, String province, String description)
     {
+        // initialise instance variables
+        this.city = city;
         this.province = province;
         this.description = description;
-        this.city = city;
     }
 
-    //Menampilkan nama provinsi
     /**
-     * Method getProvince()
-     * @return province
+     * Method getter untuk mengambil data
+     *
+     * @return    province
      */
     public String getProvince()
     {
-        return province;
+        // put your code here
+        return this.province;
     }
     
-    //Menampilkan deskripsi lokasi
     /**
-     * Method getDescription()
-     * @return description
-     */
-    public String getDescription()
-    {
-        return description;
-    }
-    
-    //Menampilkan nama kota
-    /**
-     * Method getCity()
-     * @return city
+     * Method getter untuk mengambil data
+     *
+     * @return    city
      */
     public String getCity()
     {
-        return city;
+        return this.city;
     }
     
-     //Mengganti nama provinsi
     /**
-     * Method setProvince()
+     * Method getter untuk mengambil data
+     *
+     * @return    description
+     */
+    public String getDescription()
+    {
+        return this.description;
+    }
+    
+    /**
+     * Method setter untuk menentukan data
+     *
      * @param province
      */
     public void setProvince(String province)
@@ -62,36 +65,28 @@ public class Location
         this.province = province;
     }
     
-    //Mengganti deskripsi lokasi
     /**
-     * Method setDescription()
-     * @param description
-     */
-    public void setDescription(String description)
-    {
-        this.description = description;
-    }
-    
-     //Mengganti nama kota
-    /**
-     * Method setCity()
-     * @param city
+     * Method setter untuk menentukan data
+     *
+     * @param city 
      */
     public void setCity(String city)
     {
         this.city = city;
     }
     
-    //Mencetak nama provinsi
     /**
-     * Method printData()
+     * Method setter untuk menentukan data
+     *
+     * @param description 
      */
-     public String toString() 
-    { 
-        System.out.println("==========LOCATION==========");
-        System.out.println("Provinsi : " + province);
-        System.out.println("Kota : " + city);
-        System.out.println("Deskripsi : " + description);
-        return ""; 
+    public void setDescription(String description)
+    {
+        this.description = description;
+    }
+    
+    public String toString()
+    {
+        return "Province: " +province+ "\nCity: " +city+ "\nDescription: " +description;
     }
 }

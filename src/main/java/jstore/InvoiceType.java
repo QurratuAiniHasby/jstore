@@ -2,20 +2,22 @@ package jstore;
 /**
  * Enumeration class InvoiceType - write a description of the enum class here
  *
- * @author Qurratu Aini Hasby
- * @version 11/04/2019
+ * @author (your name here)
+ * @version (version number or date here)
  */
 public enum InvoiceType
 {
-    Buy("Beli"), Sell("Jual");    
+    Buy("Buy"), Sell("Sell");
     
-    private String type;
+    private String strInvoiceType;
     
-    private InvoiceType(String type){
-        this.type = type;
+    private InvoiceType(String strInvoiceType)
+    {
+        this.strInvoiceType=strInvoiceType;
     }
     
-    public String toString(){
-        return type;
+    public String toString()
+    {
+        return strInvoiceType;
     }
 }
