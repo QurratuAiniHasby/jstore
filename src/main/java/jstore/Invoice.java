@@ -2,8 +2,8 @@ package jstore;
 /**
  * Ini adalah kelas Invoice. Kelas ini digunakan untuk
  * membuat invoice.
- * @author (Muhammad Haqy Aunoora)
- * @version (28 Februari 2019)
+ * @author
+ * @version
  */
 import java.util.Calendar;
 import java.util.ArrayList;

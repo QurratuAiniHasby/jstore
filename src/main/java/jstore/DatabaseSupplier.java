@@ -2,8 +2,8 @@ package jstore;
 /**
  * Ini adalah kelas DatabaseSupplier. Kelas ini digunakan untuk 
  * database kelas Supplier.
- * @author (Muhammad Haqy Aunoora)
- * @version (28 Februari 2019)
+ * @author
+ * @version
  */
 import java.util.ArrayList;
 

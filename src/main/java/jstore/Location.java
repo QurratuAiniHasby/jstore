@@ -3,8 +3,8 @@ package jstore;
  * Ini adalah kelas Location. Kelas ini digunakan untuk mendata
  * lokasi yang ada supplier dan hal-hal yang bersangkutan
  * dengannya.
- * @author (Muhammad Haqy Aunoora)
- * @version (28 Februari 2019)
+ * @author
+ * @version
  */
 public class Location
 {

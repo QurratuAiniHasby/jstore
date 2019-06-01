@@ -2,8 +2,8 @@ package jstore;
 /**
  * Ini adalah kelas DatabaseItem. Kelas ini digunakan untuk
  * database kelas Item.
- * @author (Muhammad Haqy Aunoora)
- * @version (28 Februari 2019)
+ * @author
+ * @version
  */
 import java.util.ArrayList;
 

@@ -2,8 +2,8 @@ package jstore;
 /**
  * Ini adalah kelas Item. Kelas ini digunakan untuk mendata
  * barang dan hal-hal yang bersangkutan dengannya.
- * @author (Muhammad Haqy Aunoora)
- * @version (28 Februari 2019)
+ * @author
+ * @version
  */
 public class Item
 {
